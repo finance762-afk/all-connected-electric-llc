@@ -1,0 +1,183 @@
+{
+  "seo": {
+    "serp_context": null,
+    "target_radius": 25,
+    "primary_keyword": "commercial",
+    "secondary_keywords": [
+      "residential",
+      "industrial",
+      "Panel Upgrades",
+      "EV Charger Installation",
+      "Lighting Installation",
+      "Wiring & Rewiring",
+      "Ceiling Fan Installation",
+      "Generator Installation",
+      "Outlet & Switch Repair",
+      "Emergency Electrician",
+      "Electrical wiring repair  Electrical outlet repair  Light switch repair  Circuit breaker repair  Electrical panel repair  Faulty wiring repair  Power outage troubleshooting  Short circuit repair  Electrical fault detection  Indoor lighting repair  Outdoor lighting repair  Ceiling fan repair  Generator repair  Electrical inspection services",
+      "Home electrical services  Residential electrical repairs  Home rewiring services  House electrical inspections  Electrical upgrades  Home lighting installation  Kitchen electrical services  Bathroom electrical wiring  New home electrical installation  Smart home wiring  Home surge protection  Electrical safety inspections",
+      "Electrician"
+    ]
+  },
+  "tier": "premium",
+  "email": "allconn4electric@gmail.com",
+  "pages": [],
+  "phone": "(301) 704-6333",
+  "assets": {
+    "logo": null,
+    "images": [],
+    "page_allocations": null,
+    "recommended_hero_image": null
+  },
+  "design": {
+    "fonts": {},
+    "notes": "",
+    "style": "modern",
+    "colors": {
+      "extracted_from_logo": true
+    },
+    "logo_analysis": {}
+  },
+  "domain": "all-connected-electric-llc",
+  "phases": [
+    {
+      "name": "scaffold",
+      "phase": 1,
+      "status": "pending"
+    },
+    {
+      "name": "nav_footer_head",
+      "phase": 2,
+      "status": "pending"
+    },
+    {
+      "name": "homepage",
+      "phase": 3,
+      "status": "pending"
+    },
+    {
+      "name": "inner_pages",
+      "phase": 4,
+      "status": "pending"
+    },
+    {
+      "name": "seo_aeo_deploy",
+      "phase": 5,
+      "status": "pending"
+    }
+  ],
+  "address": {
+    "zip": "21742",
+    "city": "Hagerstown",
+    "state": "MD",
+    "street": "19813 Leitersburg Pike Ste 301"
+  },
+  "content": {
+    "usps": [],
+    "years": 10,
+    "insurance": "",
+    "description": "All Connected Electric LLC is a local business serving Hagerstown, MD and the surrounding area, in business since 2016. Services include commercial, residential, industrial and Panel Upgrades. Contact All Connected Electric LLC at (301) 704-6333 for availability and pricing.",
+    "certifications": []
+  },
+  "reviews": [],
+  "tagline": "",
+  "industry": "Electrician",
+  "services": [],
+  "owner_name": "Andrew Porter",
+  "client_slug": "all-connected-electric-llc",
+  "form_action": "https://db.pageone.cloud/functions/v1/leads/all-connected-electric-llc",
+  "github_repo": "",
+  "web_sources": [
+    "https://share.google/Q0gkYiNIyGUER6Zwm"
+  ],
+  "company_name": "All Connected Electric LLC",
+  "integrations": {
+    "geo": null,
+    "bbb_url": null,
+    "booking": {
+      "days": [],
+      "windows": [],
+      "authorized": false
+    },
+    "spanish": false,
+    "financing": null,
+    "photo_day": null,
+    "accepts_sms": false,
+    "gbp_place_id": "ChIJ8fq1qxOTyYkR47kOuL3zo7E",
+    "estimate_tool": {
+      "pricing": [],
+      "authorized": false
+    },
+    "gbp_map_embed": null,
+    "directions_url": "https://www.google.com/maps/dir/?api=1&destination=place_id:ChIJ8fq1qxOTyYkR47kOuL3zo7E",
+    "elfsight_embed": null,
+    "financing_note": null,
+    "scheduling_url": null,
+    "text_us_number": null,
+    "review_request_url": "https://search.google.com/local/writereview?placeid=ChIJ8fq1qxOTyYkR47kOuL3zo7E",
+    "certification_links": []
+  },
+  "service_areas": [
+    "Hagerstown"
+  ],
+  "address_public": true,
+  "business_hours": "",
+  "image_curation": null,
+  "research_brief": {
+    "gbp": null,
+    "brief": {
+      "faqs": [
+        {
+          "a": "Many electrical jobs require a permit and inspection, including new circuits, service or panel upgrades, and many generator and EV charger installations. Requirements differ between the City of Hagerstown and unincorporated Washington County, so a licensed electrician can confirm what applies to your project and typically pulls the permit for you.",
+          "q": "Do I need a permit for electrical work in Hagerstown or Washington County?"
+        },
+        {
+          "a": "Common signs include breakers that trip often, lights that dim when large appliances start, a panel that feels warm or buzzes, outlets that stop working, and older panels from brands with known safety issues. Adding an EV charger, heat pump, or home addition can also require more capacity. A load calculation from a licensed electrician will show whether an upgrade is needed.",
+          "q": "How do I know if my home needs an electrical panel upgrade?"
+        },
+        {
+          "a": "In many cases, yes. The electrician will first check your panel's capacity and the condition of the wiring, then size the circuit for the charger. If the service is too small, a panel or service upgrade may be needed before installation. A permit and inspection are usually required.",
+          "q": "Can you install an EV charger in an older home?"
+        },
+        {
+          "a": "Cost depends on the scope of work, the age of the home, the materials needed, and whether permits are required. The most reliable way to get a price is a site visit and a written estimate. Ask whether there is a diagnostic or service-call fee and whether it is credited toward the repair.",
+          "q": "How much does it cost to hire an electrician in Hagerstown?"
+        },
+        {
+          "a": "Maryland requires electrical contractors to be licensed, and homeowners should confirm the license and insurance before any work begins. You can verify a Maryland electrical license through the Maryland State Board of Master Electricians, and ask for proof of general liability and workers' compensation coverage.",
+          "q": "Are your electricians licensed and insured?"
+        }
+      ],
+      "about_angle": "Position the business as a local, licensed electrical team that understands Hagerstown's mix of older homes, growing EV and home-upgrade demand, and the permit requirements of Washington County. Keep the story grounded in verified facts: the owner or lead electrician's background, years in the area, license and insurance details, and the community they serve. Avoid unverified claims about years in business or company size until the client confirms them.",
+      "hero_headline": "Licensed Electricians Serving Hagerstown and Washington County, MD",
+      "differentiators": [
+        "No competitor, site, or Google Business Profile data was provided, so these are hypotheses to verify with the client before publishing. Confirm the owner or leadership story and how calls are answered first.",
+        "Show Maryland master electrician licensing and insurance prominently, with the license number in the footer and About section. Verify the license is current with the Maryland State Board of Master Electricians before publishing.",
+        "Build a Hagerstown and Washington County focus by naming the cities and towns served (Hagerstown, Williamsport, Smithsburg, Boonsboro, Funkstown, Clear Spring, Sharpsburg, Hancock) instead of generic regional claims.",
+        "Address the older housing stock common in the Hagerstown area with panel upgrades, rewiring, and safety repairs, and explain why these matter for insurance and code compliance.",
+        "Explain the permit and inspection process as a trust signal. Confirm with the client that they pull permits through the City of Hagerstown or Washington County when required.",
+        "Make service-specific pages for panel upgrades, EV chargers, whole-home generators and transfer switches, surge protection, and troubleshooting. Each should answer a specific local search intent.",
+        "State pricing transparency only as far as the client actually offers it, such as free written estimates or whether a diagnostic fee applies.",
+        "Use real proof: job photos from Hagerstown-area homes and businesses, and reviews from Google Business Profile. Avoid invented testimonials or review counts.",
+        "Claim same-day, after-hours, or emergency service only if the client actually provides it, and state the hours and coverage area explicitly."
+      ],
+      "hero_subheadline": "Panel upgrades, EV chargers, generator hookups, and electrical repairs done to code, with clear estimates and straight answers from start to finish.",
+      "tone_recommendation": "Professional and friendly, with an authoritative, practical edge. Write in plain language that homeowners and small-business owners can follow, avoid jargon unless it is explained, lead with safety and clarity rather than hype, and use a warm, neighborly voice that reflects a local Hagerstown business."
+    },
+    "competitors": [],
+    "generated_at": "2026-10-21T13:37:26.027Z",
+    "existing_site": null
+  },
+  "competitor_urls": [],
+  "phone_secondary": "",
+  "service_grouping": {
+    "cap": 16,
+    "tier": "premium",
+    "groups": [],
+    "grouped_count": 0,
+    "original_count": 0
+  },
+  "lead_notification_email": "allconn4electric@gmail.com",
+  "lead_notification_phone": "(301) 704-6333",
+  "google_business_profile_url": "https://share.google/Q0gkYiNIyGUER6Zwm"
+}
