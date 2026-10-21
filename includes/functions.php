@@ -55,6 +55,14 @@ if (!function_exists('serviceUrl')) {
     }
 }
 
+if (!function_exists('serviceLink')) {
+    /** Contextual body link to a service page: <a> when the page is built, plain anchor text otherwise (never a 404). */
+    function serviceLink(string $slug, string $anchor): string {
+        $url = serviceUrl($slug);
+        return $url !== '' ? '<a href="' . esc($url) . '">' . esc($anchor) . '</a>' : esc($anchor);
+    }
+}
+
 if (!function_exists('areaUrl')) {
     /**
      * Built area page for a city slug, else ''. Area pages live at /service-areas/<slug>/ (Phase 4 hub URL) or

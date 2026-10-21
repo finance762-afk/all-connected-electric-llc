@@ -4,19 +4,443 @@
       "path": "/",
       "useful_because": "The homepage is the only page that puts all of All Connected Electric LLC's work in one place: the three sectors it covers (residential, commercial, industrial) and all 11 services, plus a symptom table that matches six problems people actually notice (breakers that keep tripping, a warm or buzzing panel, dimming lights, a dead or scorched outlet, a new EV or heat pump load, original wiring) to what each usually means and which service fixes it. It also says plainly what to do first if there is a burning smell, explains that permit rules differ between the City of Hagerstown and Washington County, names the owner (Andrew Porter) and the Leitersburg Pike office, and has two ways to send a job request.",
       "needs_confirmation": [
-        { "fact": "Maryland master electrician license number(s)", "question": "What is your Maryland Master Electrician license number, and is it under your name or the company's? We want to show it in the footer and on the About page.", "where": "proof strip, footer, about section" },
-        { "fact": "General liability and workers' compensation insurance", "question": "Do you carry general liability and workers' compensation insurance? We will only say \"licensed and insured\" once you confirm both.", "where": "hero chips, proof strip" },
-        { "fact": "Free estimates", "question": "Are estimates free? If not, is there a service-call or diagnostic fee, and is it credited toward the repair?", "where": "hero form heading, estimate section, FAQ on cost" },
-        { "fact": "Typical price ranges", "question": "Can you give typical price ranges for your most common jobs (for example a 200-amp panel upgrade or a Level 2 EV charger install)? Ranges are fine.", "where": "FAQ on cost, services section" },
-        { "fact": "Business hours", "question": "What are your business hours? They are not on the site yet.", "where": "footer, schema" },
-        { "fact": "Emergency / after-hours availability", "question": "You list Emergency Electrician as a service. Do you take calls after hours or on weekends, and do you go out the same day? We have not claimed 24/7 or same-day service anywhere.", "where": "warning-signs band, Emergency Electrician card" },
-        { "fact": "Callback time", "question": "How quickly do you usually get back to someone who sends the website form (same day, next business day)?", "where": "hero form tagline, What happens next" },
-        { "fact": "Process steps", "question": "Is this how a typical job goes for you: (1) customer calls or sends the form, (2) you look at the panel and wiring before quoting, (3) you pull the permit when needed, (4) you walk the customer through the finished work? Tell us what you do differently.", "where": "about section process steps, What happens next" },
-        { "fact": "Permits pulled by the company", "question": "Do you pull the electrical permits yourself, through the City of Hagerstown or Washington County, when a job needs one?", "where": "process step 3, FAQ on permits" },
-        { "fact": "Towns served beyond Hagerstown", "question": "Which towns do you serve besides Hagerstown (for example Williamsport, Smithsburg, Boonsboro, Funkstown, Clear Spring, Sharpsburg, Hancock, or anywhere in Pennsylvania or West Virginia)?", "where": "estimate section service-area line, future area pages" },
-        { "fact": "Generator and EV charger brands", "question": "Which generator brands (for example Generac, Kohler) and EV chargers do you install or service? Are you a certified dealer for any of them?", "where": "service cards, ticker" },
-        { "fact": "Owner background", "question": "Andrew, how long have you worked as an electrician, and what kind of work did you do before starting All Connected Electric in 2016?", "where": "about section" },
-        { "fact": "Job photos and logo", "question": "Please upload your logo and 8 or more photos of your own jobs (panels, EV chargers, lighting, commercial or industrial work). The homepage is built type-only right now because there are no photos on file.", "where": "hero, service cards, about section, gallery" }
+        {
+          "fact": "Maryland master electrician license number(s)",
+          "question": "What is your Maryland Master Electrician license number, and is it under your name or the company's? We want to show it in the footer and on the About page.",
+          "where": "proof strip, footer, about section"
+        },
+        {
+          "fact": "General liability and workers' compensation insurance",
+          "question": "Do you carry general liability and workers' compensation insurance? We will only say \"licensed and insured\" once you confirm both.",
+          "where": "hero chips, proof strip"
+        },
+        {
+          "fact": "Free estimates",
+          "question": "Are estimates free? If not, is there a service-call or diagnostic fee, and is it credited toward the repair?",
+          "where": "hero form heading, estimate section, FAQ on cost"
+        },
+        {
+          "fact": "Typical price ranges",
+          "question": "Can you give typical price ranges for your most common jobs (for example a 200-amp panel upgrade or a Level 2 EV charger install)? Ranges are fine.",
+          "where": "FAQ on cost, services section"
+        },
+        {
+          "fact": "Business hours",
+          "question": "What are your business hours? They are not on the site yet.",
+          "where": "footer, schema"
+        },
+        {
+          "fact": "Emergency / after-hours availability",
+          "question": "You list Emergency Electrician as a service. Do you take calls after hours or on weekends, and do you go out the same day? We have not claimed 24/7 or same-day service anywhere.",
+          "where": "warning-signs band, Emergency Electrician card"
+        },
+        {
+          "fact": "Callback time",
+          "question": "How quickly do you usually get back to someone who sends the website form (same day, next business day)?",
+          "where": "hero form tagline, What happens next"
+        },
+        {
+          "fact": "Process steps",
+          "question": "Is this how a typical job goes for you: (1) customer calls or sends the form, (2) you look at the panel and wiring before quoting, (3) you pull the permit when needed, (4) you walk the customer through the finished work? Tell us what you do differently.",
+          "where": "about section process steps, What happens next"
+        },
+        {
+          "fact": "Permits pulled by the company",
+          "question": "Do you pull the electrical permits yourself, through the City of Hagerstown or Washington County, when a job needs one?",
+          "where": "process step 3, FAQ on permits"
+        },
+        {
+          "fact": "Towns served beyond Hagerstown",
+          "question": "Which towns do you serve besides Hagerstown (for example Williamsport, Smithsburg, Boonsboro, Funkstown, Clear Spring, Sharpsburg, Hancock, or anywhere in Pennsylvania or West Virginia)?",
+          "where": "estimate section service-area line, future area pages"
+        },
+        {
+          "fact": "Generator and EV charger brands",
+          "question": "Which generator brands (for example Generac, Kohler) and EV chargers do you install or service? Are you a certified dealer for any of them?",
+          "where": "service cards, ticker"
+        },
+        {
+          "fact": "Owner background",
+          "question": "Andrew, how long have you worked as an electrician, and what kind of work did you do before starting All Connected Electric in 2016?",
+          "where": "about section"
+        },
+        {
+          "fact": "Job photos and logo",
+          "question": "Please upload your logo and 8 or more photos of your own jobs (panels, EV chargers, lighting, commercial or industrial work). The homepage is built type-only right now because there are no photos on file.",
+          "where": "hero, service cards, about section, gallery"
+        }
+      ]
+    },
+    {
+      "path": "/services/",
+      "useful_because": "The services hub is the one page that lists all 11 services side by side and sorts them by the kind of building: a three-column matrix maps homes, commercial buildings and industrial sites to the typical problems in each and the service pages that cover them. It also explains where the company works (Hagerstown and surrounding Washington County, from the Leitersburg Pike office) and why the address matters (City of Hagerstown versus Washington County permit offices), and answers the two hiring questions from the research brief: how pricing works and how to check a Maryland electrician's license.",
+      "needs_confirmation": [
+        {
+          "fact": "Most requested services",
+          "question": "Which two or three services do you get called for most? We would like to list those first on the services page.",
+          "where": "services grid order"
+        },
+        {
+          "fact": "Service-call or diagnostic fee",
+          "question": "Do you charge a service-call or diagnostic fee, and is it credited toward the repair? The cost answer on the services page tells people to ask.",
+          "where": "FAQ on cost"
+        }
+      ]
+    },
+    {
+      "path": "/services/panel-upgrades/",
+      "useful_because": "This is the only page that helps someone decide between a breaker repair, a panel replacement, a service upgrade and a subpanel: a table compares when each is the fix, what gets replaced and what to plan for (power off, utility disconnect and reconnect with Potomac Edison, permit and inspection). It lists the four warning signs specific to panels, names the panel brands that get replaced rather than repaired (Federal Pacific Stab-Lok, Zinsco), explains that sizing comes from a load calculation, and gives a five-item checklist of what to read off the panel door before calling, so the first call already has the main breaker size, open slots and any tripped breakers.",
+      "needs_confirmation": [
+        {
+          "fact": "Typical panel upgrade price ranges",
+          "question": "What does a typical panel replacement cost you, and a 100-to-200-amp service upgrade? A range is fine. We have not put any price on the page.",
+          "where": "comparison table, hero answer"
+        },
+        {
+          "fact": "Permits and utility coordination handled by the company",
+          "question": "On a service upgrade, do you pull the permit and schedule the Potomac Edison disconnect and reconnect yourselves, or does the homeowner need to call them?",
+          "where": "expert section (utility point), process step 3"
+        },
+        {
+          "fact": "How long the power is off on a panel swap",
+          "question": "On a typical house, how long is the power off while you swap a panel? Is it usually done in one day?",
+          "where": "process step 4, comparison table"
+        },
+        {
+          "fact": "Surge protection included",
+          "question": "Do you install whole-home surge protection with every panel replacement, or is it an add-on?",
+          "where": "what's included list"
+        },
+        {
+          "fact": "Commercial panel work scope",
+          "question": "On commercial jobs, do you replace panels and switchgear in occupied buildings, and can that be scheduled outside business hours?",
+          "where": "expert section (commercial point)"
+        }
+      ]
+    },
+    {
+      "path": "/services/commercial-electrical/",
+      "useful_because": "This is the only page written for a business owner or property manager rather than a homeowner. It explains when a business actually needs a commercial electrician (peak-hour trips, equipment with no circuit, failing lighting, a tenant changing over), notes why older downtown Hagerstown buildings and newer interstate-corridor buildings both outgrow their wiring, compares five common commercial jobs by how much of the building is switched off and what to plan, and gives a work-order checklist for leased spaces (equipment nameplates, layout, landlord sign-off, panel access, protected hours, city vs county permit) that no other page covers.",
+      "needs_confirmation": [
+        {
+          "fact": "Work outside business hours",
+          "question": "Can you schedule commercial work before opening, after closing or on weekends so a business can stay open? We currently only say 'ask how the work can be arranged around your opening hours'.",
+          "where": "expert section, process step 4"
+        },
+        {
+          "fact": "Commercial building types served",
+          "question": "Which kinds of commercial buildings do you work in most (offices, retail storefronts, restaurants, medical offices, churches, property-management portfolios)? We only name offices and storefronts.",
+          "where": "hero, signs section"
+        },
+        {
+          "fact": "Tenant fit-outs / build-outs",
+          "question": "Do you take on full tenant fit-outs or build-outs, or mainly service work and smaller additions in existing spaces?",
+          "where": "scope list, comparison table"
+        },
+        {
+          "fact": "Exit and emergency lighting",
+          "question": "Do you install, test or repair exit and emergency lighting in commercial buildings?",
+          "where": "scope list"
+        },
+        {
+          "fact": "Commercial permits pulled by the company",
+          "question": "On commercial jobs, do you pull the electrical permit yourselves through the City of Hagerstown or Washington County?",
+          "where": "process step 3, FAQ"
+        },
+        {
+          "fact": "Maintenance or service agreements",
+          "question": "Do you offer ongoing maintenance or on-call agreements for businesses or property managers?",
+          "where": "expert section (not mentioned yet)"
+        }
+      ]
+    },
+    {
+      "path": "/services/residential-electrical/",
+      "useful_because": "This is the only page that walks a homeowner through the house room by room: what current code expects in the kitchen (dedicated appliance circuits, two small-appliance countertop circuits with GFCI), bathrooms, laundry, bedrooms (AFCI, tamper-resistant), basement, garage and outdoors, plus whole-home surge protection at the panel. It separates a repair from an upgrade from a house electrical inspection in a table, explains why smart switches often fail in older boxes (no neutral), and answers how to check a Maryland electrician's license and what drives home repair cost.",
+      "needs_confirmation": [
+        {
+          "fact": "House electrical inspections for sale, purchase or insurance",
+          "question": "Do you do whole-house electrical safety inspections for people buying, selling or insuring a home? If so, do you give a written report?",
+          "where": "scope list, repair/upgrade/inspection table"
+        },
+        {
+          "fact": "Smart home devices supported",
+          "question": "Which smart home devices do you install (smart switches, video doorbells, hardwired smoke/CO detectors, others)? Any brands you prefer or avoid?",
+          "where": "scope list (smart home wiring)"
+        },
+        {
+          "fact": "Whole-home surge protector installs",
+          "question": "Do you install whole-home surge protective devices at the panel as a standalone job, or only with panel work?",
+          "where": "expert section, room-by-room outdoors tile"
+        },
+        {
+          "fact": "New home and addition wiring",
+          "question": "Do you wire new houses and additions from rough-in to finish, and do you work with builders or only directly with homeowners?",
+          "where": "scope list"
+        },
+        {
+          "fact": "Home repair pricing / service-call fee",
+          "question": "How do you price small home repairs: a service-call or diagnostic fee, hourly, or flat per job? Is the fee credited toward the repair?",
+          "where": "FAQ on cost"
+        },
+        {
+          "fact": "Maryland license number",
+          "question": "What Maryland license number should homeowners see on this page? We currently only tell people how to look a license up.",
+          "where": "FAQ on licensing"
+        }
+      ]
+    },
+    {
+      "path": "/services/industrial-electrical/",
+      "useful_because": "This page speaks to warehouse, shop and plant operators along the I-81 and I-70 corridors. It explains the four electrical problems that stop production (startup trips from motor inrush, new machines with no circuit, low voltage at motors, full distribution panels), compares single-phase and three-phase power in a table (voltages, loads, motor behavior, how to get it from Potomac Edison, what to do without it), and shows exactly what to read off an equipment nameplate (volts, phase, FLA, HP/kW, MCA, MOP, location) before calling, none of which the homepage or other service pages include.",
+      "needs_confirmation": [
+        {
+          "fact": "Three-phase and 480 V experience",
+          "question": "Do you work on three-phase systems, and at what voltages (120/208 V, 277/480 V)? The page explains three-phase power but does not claim you install it.",
+          "where": "comparison table, scope list"
+        },
+        {
+          "fact": "Equipment types worked on",
+          "question": "What industrial equipment do you most often wire or troubleshoot (compressors, welders, conveyors, CNC or production machines, dock equipment, motor controls, VFDs)?",
+          "where": "scope list, signs section"
+        },
+        {
+          "fact": "Phase converters and utility service changes",
+          "question": "Do you install phase converters or coordinate three-phase service changes with Potomac Edison?",
+          "where": "comparison table"
+        },
+        {
+          "fact": "Scheduling around production",
+          "question": "Can you work during planned shutdowns, nights or weekends so a line keeps running?",
+          "where": "process step 3"
+        },
+        {
+          "fact": "Industrial facility types",
+          "question": "Which kinds of sites do you serve (distribution warehouses, manufacturing plants, fabrication or auto shops, farms)? Any you would like named?",
+          "where": "hero, signs section"
+        },
+        {
+          "fact": "High-bay warehouse lighting",
+          "question": "Do you install or retrofit high-bay lighting in warehouses?",
+          "where": "scope list"
+        }
+      ]
+    },
+    {
+      "path": "/services/ev-charger-installation/",
+      "useful_because": "This is the only page that explains how a Level 2 charger install is actually decided: the panel's spare capacity, the distance and path from the panel to the parking spot, and indoor versus outdoor mounting, shown as a four-step route. It compares a Level 1 cord, a plug-in NEMA 14-50 charger and a hardwired charger in a table with power supply, typical output (1.4 / 9.6 / 11.5 kW) and best fit, explains the 125 percent continuous-load breaker sizing (a 48-amp charger on a 60-amp circuit), and answers whether an older Hagerstown house needs a panel upgrade first and whether a permit is needed in the City of Hagerstown or Washington County.",
+      "needs_confirmation": [
+        {
+          "fact": "Charger brands installed or recommended",
+          "question": "Which EV charger brands do you install or recommend (for example Tesla Wall Connector, ChargePoint, Emporia, Grizzl-E)? Do customers buy the charger themselves, or can you supply it?",
+          "where": "scope section, hero chips"
+        },
+        {
+          "fact": "Typical Level 2 install price range",
+          "question": "What is a typical price range for a Level 2 charger install when the panel has room, and when a longer run or a detached garage is involved?",
+          "where": "comparison section, FAQ"
+        },
+        {
+          "fact": "Workplace / multi-port commercial chargers",
+          "question": "Do you install chargers for businesses (staff or customer parking, multiple ports, load-management systems)?",
+          "where": "expert section commercial point"
+        },
+        {
+          "fact": "Utility or state EV rebates",
+          "question": "Do you help customers with Potomac Edison or Maryland EV charger rebate paperwork, or should we leave rebates off the site?",
+          "where": "scope section"
+        },
+        {
+          "fact": "Permits pulled for EV circuits",
+          "question": "Do you pull the electrical permit for EV charger circuits through the City of Hagerstown or Washington County?",
+          "where": "process step 3, FAQ on permits"
+        }
+      ]
+    },
+    {
+      "path": "/services/lighting-installation/",
+      "useful_because": "This page helps someone decide what lighting they want and what is wrong with the lighting they have. It explains what flicker, dead-after-a-new-bulb, LEDs that will not dim, and outdoor lights that fail after rain usually mean; compares recessed/canless, fixture swaps, under-cabinet, exterior/security and landscape lighting in a table (best use, what the install involves, IC, damp and wet ratings); and shows a color-temperature scale from 2700K to 5000K matched to rooms, which no other page on the site covers.",
+      "needs_confirmation": [
+        {
+          "fact": "Drywall and plaster patching",
+          "question": "When openings are cut for recessed lights or new wiring, do you patch the drywall or plaster, or does the customer arrange that?",
+          "where": "scope list, process"
+        },
+        {
+          "fact": "Smart lighting and controls",
+          "question": "Do you install smart switches, smart dimmers, motion sensors or app-controlled lighting? Any brands you prefer?",
+          "where": "scope list, comparison table"
+        },
+        {
+          "fact": "Landscape lighting",
+          "question": "Do you install landscape lighting (low-voltage or line-voltage), or only porch, garage and security lights?",
+          "where": "comparison table"
+        },
+        {
+          "fact": "Customer-supplied fixtures",
+          "question": "Will you install fixtures the customer has already bought, or do you supply them?",
+          "where": "process step 3"
+        },
+        {
+          "fact": "Commercial lighting retrofits",
+          "question": "Do you do LED retrofits for offices, stores or warehouses (fluorescent to LED, ballast bypass)?",
+          "where": "expert section, scope"
+        },
+        {
+          "fact": "Fixture brands",
+          "question": "Are there fixture or recessed-light brands you usually install?",
+          "where": "comparison table"
+        }
+      ]
+    },
+    {
+      "path": "/services/wiring-rewiring/",
+      "useful_because": "This page tells a Hagerstown homeowner what wiring is probably behind their walls by the age of the house (knob-and-tube, cloth-sheathed ungrounded cable, aluminum branch wiring, grounded plastic-sheathed cable) and what each usually means (replace, inspect, check connections, keep). It compares a single faulty-wiring repair, partial rewiring, whole-house rewiring and renovation wiring by fit and disruption, explains the circuit-by-circuit approach and the rough-in inspection before walls close, and covers the City of Hagerstown versus Washington County permit question.",
+      "needs_confirmation": [
+        {
+          "fact": "Rewiring occupied homes",
+          "question": "Do you rewire houses while people are living in them, and how do you handle keeping some power on during the job?",
+          "where": "scope + process, comparison table (disruption column)"
+        },
+        {
+          "fact": "Wall and plaster patching",
+          "question": "After rewiring, who patches the openings in plaster or drywall: your crew, a partner, or the homeowner?",
+          "where": "scope list (small, planned openings)"
+        },
+        {
+          "fact": "Knob-and-tube and aluminum wiring work",
+          "question": "Do you replace knob-and-tube wiring, and do you repair aluminum branch wiring connections (for example with rated connectors) or only replace it?",
+          "where": "wiring-by-era timeline"
+        },
+        {
+          "fact": "Permits pulled by the company for rewiring",
+          "question": "Do you pull the permit and schedule the rough-in and final inspections for rewiring jobs?",
+          "where": "process steps 3 and 5, FAQ on permits"
+        },
+        {
+          "fact": "Typical rewiring duration / price range",
+          "question": "Roughly how long does a partial or whole-house rewire take for a typical Hagerstown house, and is there a typical price range you are comfortable publishing?",
+          "where": "comparison table"
+        }
+      ]
+    },
+    {
+      "path": "/services/ceiling-fan-installation/",
+      "useful_because": "This page covers what makes a ceiling fan install safe and quiet: checking that the ceiling box is marked for fan support and fastened to framing, the 35-pound threshold for heavier fans, the 7-foot blade clearance most manufacturers call for, and the wiring each control setup needs (pull chain, single switch, separate fan and light switches, remote, smart control). It adds a fan-size-by-room guide and notes for Hagerstown's humid summers and winter reverse mode, none of which appears on the lighting or residential pages.",
+      "needs_confirmation": [
+        {
+          "fact": "Installing customer-supplied fans",
+          "question": "Do you install fans the customer has already bought, or do you prefer to supply the fan?",
+          "where": "process step 1, final CTA"
+        },
+        {
+          "fact": "Existing box vs new brace",
+          "question": "When the existing box is not fan-rated, do you install a retrofit fan brace through the existing hole, or open the ceiling? Can you work from the attic?",
+          "where": "scope list, expert section"
+        },
+        {
+          "fact": "New fan locations with no existing fixture",
+          "question": "Do you add fans where there is no ceiling fixture, including fishing new switch wiring through finished walls?",
+          "where": "signs bento, scope list"
+        },
+        {
+          "fact": "High or sloped ceilings",
+          "question": "Do you hang fans on high or vaulted ceilings, and is there a height limit for what you can reach with your ladders or lifts?",
+          "where": "scope list (downrod), controls table"
+        },
+        {
+          "fact": "Ceiling fan repair",
+          "question": "Do you repair existing fans (wobble, noise, failed capacitor or receiver), or mainly replace them?",
+          "where": "scope list, hero chips"
+        }
+      ]
+    },
+    {
+      "path": "/services/generator-installation/",
+      "useful_because": "This page explains how a generator should connect to a building, which the homepage only mentions: why backfeeding through a dryer outlet endangers Potomac Edison line crews, and how a panel interlock, a manual transfer switch and a standby unit with an automatic transfer switch differ (a table covering how each switches, what it can power and what you do in an outage). It also gives a three-tier plan for which circuits to keep on (pumps, heat, refrigeration and medical equipment first, comfort loads second, big 240-volt loads only with a large unit), a carbon monoxide warning for portable generators, and the permit question for Washington County.",
+      "needs_confirmation": [
+        {
+          "fact": "Generator brands installed and dealer status",
+          "question": "Which generator brands do you install or service (for example Generac, Kohler, Briggs & Stratton), and are you an authorized dealer or service provider for any of them?",
+          "where": "hero, expert section"
+        },
+        {
+          "fact": "Standby generator installs and gas connection",
+          "question": "Do you install standby generators yourselves, including the pad? Who handles the natural gas or propane connection — you, a partner, or the customer's gas company?",
+          "where": "scope section, comparison table"
+        },
+        {
+          "fact": "Typical price ranges",
+          "question": "What are typical price ranges for a panel interlock with an inlet box, a manual transfer switch, and a standby generator install?",
+          "where": "comparison section"
+        },
+        {
+          "fact": "Generator repair and maintenance scope",
+          "question": "What generator repair work do you take on (no-start, failed transfer, inlet wiring), and do you offer maintenance visits for standby units?",
+          "where": "expert section repair point"
+        },
+        {
+          "fact": "Permits pulled for generator work",
+          "question": "Do you pull the electrical permit for transfer switch and standby generator work?",
+          "where": "process step 3, FAQ"
+        }
+      ]
+    },
+    {
+      "path": "/services/outlet-switch-repair/",
+      "useful_because": "This page helps someone with a dead outlet or a flickering switch work out where the problem is before they call: a symptom table (one dead outlet, several dead, breaker trips on plug-in, flickering switch, warm plate) with the likely cause, a safe first check and when to call, plus an explanation of how a tripped GFCI in a garage can kill a bathroom outlet. It also has a device guide covering tamper-resistant, GFCI, AFCI, USB, dimmer and smart switches and where each belongs, which no other page on the site covers.",
+      "needs_confirmation": [
+        {
+          "fact": "Smart switch and dimmer installs",
+          "question": "Do you install smart switches and LED-compatible dimmers, and will you add a neutral wire to a switch box that lacks one?",
+          "where": "scope list, device guide"
+        },
+        {
+          "fact": "Small-job minimum",
+          "question": "Is there a minimum charge for a single outlet or switch repair, or do you prefer to bundle small repairs into one visit?",
+          "where": "scope section, final CTA"
+        },
+        {
+          "fact": "Commercial receptacle work",
+          "question": "Do you take outlet and switch repairs at businesses (offices, shops) as standalone small jobs?",
+          "where": "expert section (businesses as well as homes)"
+        },
+        {
+          "fact": "GFCI/AFCI upgrades on request",
+          "question": "Will you add GFCI or AFCI protection to existing circuits on request, even when no other work is being done?",
+          "where": "scope list, device guide"
+        }
+      ]
+    },
+    {
+      "path": "/services/emergency-electrician/",
+      "useful_because": "This page tells someone in the middle of an electrical problem what to do first and who to call: fire, smoke or a burning smell means 911; a downed line means 911 and Potomac Edison; a dark street means Potomac Edison; a problem inside the building means an electrician. A five-row table sorts common symptoms (whole street out, only your building out, half power or dim-and-bright lights, one dead circuit, a breaker that trips on reset) by what they usually mean, who to call first and what to avoid, explains the utility-side versus owner-side split after storm damage, and gives a six-item call sheet of details that speed troubleshooting. It makes no 24/7, same-day or response-time claim.",
+      "needs_confirmation": [
+        {
+          "fact": "After-hours and weekend emergency availability",
+          "question": "Do you take emergency calls after hours, overnight or on weekends? If so, which hours, and is there a different rate?",
+          "where": "hero answer, final CTA, title/meta"
+        },
+        {
+          "fact": "Typical arrival window for urgent calls",
+          "question": "When someone calls with an urgent problem during business hours, how soon can you usually get there?",
+          "where": "hero answer, process section"
+        },
+        {
+          "fact": "Service-call or diagnostic fee",
+          "question": "Is there a service-call or diagnostic fee for urgent troubleshooting, and is it credited toward the repair?",
+          "where": "FAQ on cost"
+        },
+        {
+          "fact": "Storm damage repairs (service mast / meter base)",
+          "question": "Do you repair storm damage on the owner's side, such as a pulled-off service mast or meter base, and coordinate the reconnect with Potomac Edison?",
+          "where": "comparison table note"
+        },
+        {
+          "fact": "Emergency service for commercial and industrial clients",
+          "question": "Do you offer priority or contract emergency service for businesses and industrial customers?",
+          "where": "expert section"
+        }
       ]
     }
   ],

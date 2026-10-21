@@ -1,0 +1,184 @@
+/* ==========================================================================
+   includes/service-page.css — shared skeleton for /services/<slug>/ pages and the /services/ hub.
+   Inlined by each service page via a PHP include inside a style element (see services/panel-upgrades/index.php).
+   Page-specific signature sections live in each page's own <style> block.
+   Archetype minimal-tech: type-led dark hero, hairline rules, accent-yellow detail. Tokens only.
+   ========================================================================== */
+
+/* ---- Hero (type-led, layered: accent glow ::before, conductor-line grid ::after, grain span) ---- */
+.sp-hero { padding-bottom: var(--space-3xl); }
+.sp-hero::before {
+  content: "";
+  position: absolute;
+  inset: -30% -15% auto 45%;
+  height: 160%;
+  z-index: -1;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 72%);
+  pointer-events: none;
+}
+.sp-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-white) 5%, transparent) 0 1px, transparent 1px var(--space-3xl)),
+    linear-gradient(color-mix(in srgb, var(--color-white) 4%, transparent) 1px, transparent 1px);
+  background-size: auto, var(--space-3xl) var(--space-3xl);
+  -webkit-mask-image: linear-gradient(105deg, transparent 20%, var(--color-black) 70%);
+  mask-image: linear-gradient(105deg, transparent 20%, var(--color-black) 70%);
+  pointer-events: none;
+}
+.sp-hero .grain { z-index: -1; opacity: .28; }
+.sp-hero .breadcrumb { color: color-mix(in srgb, var(--color-white) 62%, transparent); margin-bottom: var(--space-xs); }
+.sp-hero .breadcrumb a:hover { color: var(--color-white); }
+.sp-hero .breadcrumb [aria-current="page"] { color: var(--color-white); display: inline-flex; align-items: center; min-height: 44px; }
+.sp-hero .hero-title { letter-spacing: -.03em; }
+.sp-hero .text-accent { color: var(--color-accent-bright); }
+.sp-hero .hero-chips li {
+  background: color-mix(in srgb, var(--color-white) 7%, transparent);
+  border-color: color-mix(in srgb, var(--color-white) 18%, transparent);
+  color: var(--color-white);
+}
+.sp-hero .hero-chips svg { color: var(--color-accent-bright); }
+.sp-hero .hero-actions .btn-primary { background: var(--color-accent); color: var(--color-ink); }
+.sp-hero .hero-form-card { position: relative; }
+.sp-hero .hero-form-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--space-1);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--color-accent);
+}
+.sp-hero .hero-form .btn-primary:hover { background: var(--color-primary-deep); }
+.sp-hero .link-call { color: color-mix(in srgb, var(--color-white) 88%, transparent); }
+.sp-hero .link-call svg { color: var(--color-accent-bright); }
+.sp-hero .link-call:hover { color: var(--color-white); }
+
+/* ---- Article rhythm ---- */
+.sp-article > section:nth-of-type(odd):not(.texture-grain) { background: var(--color-paper); }
+.sp-article > section:nth-of-type(even):not(.texture-grain) { background: var(--color-surface); }
+.sp-article .section-head h2 { max-width: 30ch; }
+.sp-article h2 + .answer-block, .sp-article h3 + .answer-block { margin-top: var(--space-md); }
+.sp-article .answer-block { font-size: var(--fs-lead); line-height: 1.55; color: var(--color-ink-2); }
+.sp-article .prose p { color: var(--color-ink-2); }
+.sp-article .prose a, .sp-article .answer-block a, .sp-faq .faq a { color: var(--color-ink); font-weight: 600; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.sp-article .prose a:hover { color: var(--color-accent-dark); }
+
+/* ---- 2. Problem: pull-quote beside bento signs ---- */
+.sp-signs__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.sp-signs .pull-quote { font-style: italic; font-size: clamp(1.4rem, 1rem + 1.6vw, 2.1rem); margin: 0 0 var(--space-md); }
+.sp-signs .pull-quote + p { color: var(--color-ink-2); max-width: 46ch; }
+.sp-bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); margin: 0; padding: 0; list-style: none; }
+.sp-bento li {
+  position: relative;
+  display: grid;
+  gap: var(--space-xs);
+  align-content: start;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.sp-bento li:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--color-ink) 30%, var(--color-line)); }
+.sp-bento li:first-child { grid-row: span 2; background: var(--color-card-tint-3); }
+.sp-bento li:nth-child(2) { background: var(--color-card-tint-1); }
+.sp-bento li:nth-child(3) { background: var(--color-card-tint-2); }
+.sp-bento li:nth-child(4):last-child, .sp-bento li:nth-child(5) { grid-column: 1 / -1; }
+.sp-bento .sp-bento__icon { display: grid; place-items: center; width: var(--space-10); height: var(--space-10); border-radius: var(--radius); background: var(--color-primary); color: var(--color-accent); }
+.sp-bento h3 { font-size: 1.05rem; }
+.sp-bento p { margin: 0; font-size: .93rem; color: var(--color-ink-2); }
+
+/* ---- 3. Expert positioning: dark band, big fact left, copy right (60/40) ---- */
+.sp-expert__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.sp-expert__fact { position: sticky; top: calc(var(--nav-height) + var(--space-lg)); display: grid; gap: var(--space-xs); padding-top: var(--space-md); border-top: 3px solid var(--color-accent); }
+.sp-expert__fact b { font-family: var(--font-accent); font-size: clamp(3.2rem, 2rem + 4vw, 5.5rem); line-height: .9; text-transform: uppercase; color: var(--color-white); letter-spacing: .01em; }
+.sp-expert__fact b span { color: var(--color-accent-bright); }
+.sp-expert__fact > span { font-size: var(--fs-small); color: color-mix(in srgb, var(--color-white) 70%, transparent); max-width: 30ch; }
+.sp-expert .answer-block { background: color-mix(in srgb, var(--color-white) 6%, transparent); color: color-mix(in srgb, var(--color-white) 86%, transparent); border-left-color: var(--color-accent); }
+.sp-points { display: grid; gap: var(--space-md); margin: var(--space-lg) 0 0; padding: 0; list-style: none; }
+.sp-points li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-xs) var(--space-md); padding-top: var(--space-md); border-top: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent); }
+.sp-points svg { color: var(--color-accent-bright); margin-top: 3px; }
+.sp-points b { display: block; color: var(--color-white); font-family: var(--font-heading); }
+.sp-points span { color: color-mix(in srgb, var(--color-white) 78%, transparent); font-size: .95rem; }
+.sp-expert a { color: var(--color-white); text-decoration-color: var(--color-accent); }
+
+/* ---- 4. Scope + process: sticky heading column, numbered steps ---- */
+.sp-scope__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.sp-included { display: grid; gap: var(--space-sm); margin: var(--space-md) 0 0; padding: 0; list-style: none; }
+.sp-included li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-sm); align-items: start; color: var(--color-ink-2); }
+.sp-included svg { color: var(--color-accent-dark); margin-top: 3px; }
+.sp-included b { color: var(--color-ink); }
+.sp-steps-wrap { position: sticky; top: calc(var(--nav-height) + var(--space-lg)); }
+.sp-steps { display: grid; gap: 0; margin: var(--space-md) 0 0; padding: 0; list-style: none; counter-reset: sp-step; }
+.sp-steps li { counter-increment: sp-step; position: relative; display: grid; gap: var(--space-1); padding: 0 0 var(--space-lg) var(--space-3xl); }
+.sp-steps li::before {
+  content: counter(sp-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: var(--space-10);
+  height: var(--space-10);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+}
+.sp-steps li::after { content: ""; position: absolute; left: calc(var(--space-10) / 2 - 1px); top: var(--space-10); bottom: 0; width: 2px; background: var(--color-line); }
+.sp-steps li:last-child::after { display: none; }
+.sp-steps b { font-family: var(--font-heading); color: var(--color-ink); }
+.sp-steps span { font-size: .95rem; color: var(--color-ink-2); }
+
+/* ---- 5. Comparison table ---- */
+.sp-table-wrap { overflow-x: auto; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.sp-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); min-width: 620px; }
+.sp-table caption { text-align: left; padding: var(--space-md) var(--space-lg) 0; color: var(--color-muted); font-size: var(--fs-small); }
+.sp-table th, .sp-table td { text-align: left; vertical-align: top; padding: var(--space-md) var(--space-lg); border-top: 1px solid var(--color-line); }
+.sp-table thead th { border-top: 0; font-family: var(--font-accent); font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: var(--color-muted); background: var(--color-paper-2); }
+.sp-table tbody th { font-family: var(--font-heading); font-weight: 700; color: var(--color-ink); width: 24%; }
+.sp-table td { color: var(--color-ink-2); }
+.sp-table tbody tr { transition: background var(--transition); }
+.sp-table tbody tr:hover { background: color-mix(in srgb, var(--color-accent) 7%, var(--color-surface)); }
+.sp-table-note { margin: var(--space-md) 0 0; font-size: var(--fs-small); color: var(--color-muted); max-width: 70ch; }
+
+/* ---- 6. FAQ ---- */
+.sp-faq .faq[open] { border-top-color: var(--color-accent); }
+.sp-faq .faq summary { text-wrap: balance; }
+
+/* ---- Updated stamp ---- */
+.sp-updated { margin: 0; padding-block: var(--space-md); font-size: var(--fs-small); color: var(--color-muted); border-top: 1px solid var(--color-line); }
+
+/* ---- 7. Related services (required services-grid component, 3 cards, icon-led) ---- */
+.sp-related { background: var(--color-paper-2); }
+.sp-related .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sp-related .hero-answer { color: var(--color-ink-2); max-width: 62ch; }
+.sp-related .service-card__icon { width: var(--space-12); height: var(--space-12); border-radius: var(--radius); background: var(--color-primary); color: var(--color-accent); }
+.sp-related .service-card__cta { color: var(--color-ink); }
+.sp-related .service-card__cta:hover { color: var(--color-accent-dark); }
+.sp-related__hub { margin: var(--space-xl) 0 0; font-size: var(--fs-small); color: var(--color-ink-2); }
+.sp-related__hub a { color: var(--color-ink); font-weight: 600; }
+
+/* ---- 8. Final CTA ---- */
+.sp-cta h2 { max-width: 26ch; }
+.sp-cta p { max-width: 58ch; margin: 0; }
+.sp-cta .eyebrow { color: var(--color-accent-bright); }
+.sp-cta .actions .btn-accent:hover { background: var(--color-accent-bright); color: var(--color-ink); filter: brightness(1.06); }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .sp-signs__grid, .sp-expert__grid, .sp-scope__grid { grid-template-columns: 1fr; }
+  .sp-steps-wrap, .sp-expert__fact { position: static; }
+  .sp-related .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .sp-bento { grid-template-columns: 1fr; }
+  .sp-bento li:first-child { grid-row: auto; }
+  .sp-related .services-grid { grid-template-columns: 1fr; }
+  .sp-table th, .sp-table td { padding: var(--space-sm) var(--space-md); }
+}

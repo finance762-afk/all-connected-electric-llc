@@ -3,6 +3,7 @@
  * includes/footer.php — closes <main>; footer (brand, services, areas, contact, AEO entity block, legal row, credit,
  * partner badge), back-to-top, mobile CTA bar, cookie banner, estimate dialog, scripts. Closes </body></html>.
  * Pages with their own full lead form (contact, thank-you) set $noEstimateDialog = true before this include.
+ * Service pages set $dialogService = '<service name>' so the dialog's service select arrives preselected.
  * LINK INTEGRITY: page links render only when the page exists on disk; unbuilt services/areas print as plain text.
  * Shared-include rule: loop variables are prefixed ($footSvc, $footArea, $footLink).
  */
@@ -158,7 +159,7 @@ foreach ($services as $footSvc) $footEntityServices[] = strtolower($footSvc['nam
 <?php if (empty($noEstimateDialog)): ?>
 <dialog id="estimate-dialog" class="estimate-dialog" aria-labelledby="estimate-dialog-title">
   <div class="dialog-head">
-    <h2 id="estimate-dialog-title">Get an Estimate</h2>
+    <h2 id="estimate-dialog-title">Need an estimate?</h2>
     <button type="button" class="dialog-close" data-close-estimate aria-label="Close estimate form"><?php echo icon('x', 20); ?></button>
   </div>
   <div class="dialog-body">
@@ -169,7 +170,7 @@ foreach ($services as $footSvc) $footEntityServices[] = strtolower($footSvc['nam
         <div class="field"><label for="dialog-name">Your name *</label><input id="dialog-name" type="text" name="name" autocomplete="name" required></div>
         <div class="field"><label for="dialog-phone">Phone *</label><input id="dialog-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required></div>
         <div class="field full"><label for="dialog-email">Email *</label><input id="dialog-email" type="email" name="email" autocomplete="email" required></div>
-        <div class="field full"><label for="dialog-service">Service needed</label><select id="dialog-service" name="service"><?php echo p1_service_options(); ?></select></div>
+        <div class="field full"><label for="dialog-service">Service needed</label><select id="dialog-service" name="service"><?php echo p1_service_options($dialogService ?? ''); ?></select></div>
         <div class="field full"><label for="dialog-message">Project details</label><textarea id="dialog-message" name="message" rows="3"></textarea></div>
       </div>
       <label class="consent" for="dialog-email-opt-in">
