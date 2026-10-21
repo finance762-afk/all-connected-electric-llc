@@ -35,7 +35,7 @@ $navHasAreas    = siteHas('/service-areas/');
 
       <a class="brand site-logo" href="/" aria-label="<?php echo esc($siteName); ?> — home">
 <?php if ($navLogo): ?>
-        <img src="<?php echo esc($navLogo['src']); ?>" alt="<?php echo esc($siteName); ?>" width="<?php echo (int) $navLogo['width']; ?>" height="<?php echo (int) $navLogo['height']; ?>"<?php echo $navLogo['class'] !== '' ? ' class="' . esc($navLogo['class']) . '"' : ''; ?> decoding="async">
+        <img src="<?php echo esc($navLogo['src']); ?>" alt="<?php echo esc($siteName); ?>" width="<?php echo (int) $navLogo['width']; ?>" height="<?php echo (int) $navLogo['height']; ?>"<?php echo $navLogo['class'] !== '' ? ' class="' . esc($navLogo['class']) . '"' : ''; ?> loading="eager" decoding="async">
 <?php else: ?>
         <span class="logo-mark" aria-hidden="true"><?php echo boltMark(24); ?></span>
         <span class="logo-text">

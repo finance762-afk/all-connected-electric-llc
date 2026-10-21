@@ -6,6 +6,9 @@
  * Loop variables inside shared includes are prefixed ($navSvc, $footArea) — never $svc/$area/$c/$card.
  */
 
+// Lead-form helpers (p1_lead_hidden_fields, p1_consent_row, p1_service_options) — pages with a hero/estimate form call these before footer.php
+require_once __DIR__ . '/p1-form-helpers.php';
+
 if (!function_exists('esc')) {
     /** HTML-escape for text and attribute output. */
     function esc($value): string {

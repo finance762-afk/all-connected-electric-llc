@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "useful_because": "The homepage is the only page that puts all of All Connected Electric LLC's work in one place: the three sectors it covers (residential, commercial, industrial) and all 11 services, plus a symptom table that matches six problems people actually notice (breakers that keep tripping, a warm or buzzing panel, dimming lights, a dead or scorched outlet, a new EV or heat pump load, original wiring) to what each usually means and which service fixes it. It also says plainly what to do first if there is a burning smell, explains that permit rules differ between the City of Hagerstown and Washington County, names the owner (Andrew Porter) and the Leitersburg Pike office, and has two ways to send a job request.",
+      "needs_confirmation": [
+        { "fact": "Maryland master electrician license number(s)", "question": "What is your Maryland Master Electrician license number, and is it under your name or the company's? We want to show it in the footer and on the About page.", "where": "proof strip, footer, about section" },
+        { "fact": "General liability and workers' compensation insurance", "question": "Do you carry general liability and workers' compensation insurance? We will only say \"licensed and insured\" once you confirm both.", "where": "hero chips, proof strip" },
+        { "fact": "Free estimates", "question": "Are estimates free? If not, is there a service-call or diagnostic fee, and is it credited toward the repair?", "where": "hero form heading, estimate section, FAQ on cost" },
+        { "fact": "Typical price ranges", "question": "Can you give typical price ranges for your most common jobs (for example a 200-amp panel upgrade or a Level 2 EV charger install)? Ranges are fine.", "where": "FAQ on cost, services section" },
+        { "fact": "Business hours", "question": "What are your business hours? They are not on the site yet.", "where": "footer, schema" },
+        { "fact": "Emergency / after-hours availability", "question": "You list Emergency Electrician as a service. Do you take calls after hours or on weekends, and do you go out the same day? We have not claimed 24/7 or same-day service anywhere.", "where": "warning-signs band, Emergency Electrician card" },
+        { "fact": "Callback time", "question": "How quickly do you usually get back to someone who sends the website form (same day, next business day)?", "where": "hero form tagline, What happens next" },
+        { "fact": "Process steps", "question": "Is this how a typical job goes for you: (1) customer calls or sends the form, (2) you look at the panel and wiring before quoting, (3) you pull the permit when needed, (4) you walk the customer through the finished work? Tell us what you do differently.", "where": "about section process steps, What happens next" },
+        { "fact": "Permits pulled by the company", "question": "Do you pull the electrical permits yourself, through the City of Hagerstown or Washington County, when a job needs one?", "where": "process step 3, FAQ on permits" },
+        { "fact": "Towns served beyond Hagerstown", "question": "Which towns do you serve besides Hagerstown (for example Williamsport, Smithsburg, Boonsboro, Funkstown, Clear Spring, Sharpsburg, Hancock, or anywhere in Pennsylvania or West Virginia)?", "where": "estimate section service-area line, future area pages" },
+        { "fact": "Generator and EV charger brands", "question": "Which generator brands (for example Generac, Kohler) and EV chargers do you install or service? Are you a certified dealer for any of them?", "where": "service cards, ticker" },
+        { "fact": "Owner background", "question": "Andrew, how long have you worked as an electrician, and what kind of work did you do before starting All Connected Electric in 2016?", "where": "about section" },
+        { "fact": "Job photos and logo", "question": "Please upload your logo and 8 or more photos of your own jobs (panels, EV chargers, lighting, commercial or industrial work). The homepage is built type-only right now because there are no photos on file.", "where": "hero, service cards, about section, gallery" }
+      ]
+    }
+  ],
+  "consolidate": []
+}

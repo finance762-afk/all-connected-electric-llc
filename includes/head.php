@@ -69,6 +69,8 @@ if (!empty($schemaMarkup)) {
 -->
 <?php endif; ?>
 
-<?php echo schemaGraph($headNodes); ?>
+<?php $headNodes = array_values(array_filter($headNodes)); if ($headNodes): ?>
+<script type="application/ld+json"><?php echo jsonLd(['@context' => 'https://schema.org', '@graph' => $headNodes]); ?></script>
+<?php endif; ?>
 </head>
 <body class="has-sticky-bar<?php echo !empty($bodyClass) ? ' ' . esc($bodyClass) : ''; ?>">
