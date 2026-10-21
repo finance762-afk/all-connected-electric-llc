@@ -535,6 +535,43 @@ if ($homeReviews !== ''): ?>
   </div>
 </section>
 
+<!-- ============ 9b. FROM THE BLOG (registry-driven: latest post = $blogPosts[0]) ============ -->
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
+$homePost = $blogPosts[0] ?? null;
+if ($homePost && siteHas('/blog/' . $homePost['slug'] . '/')): ?>
+<style><?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/blog.css'; ?></style>
+<style>
+.home-blog { background: var(--color-paper-2); }
+.home-blog__card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-line); background: var(--color-surface); box-shadow: var(--shadow); color: inherit; transition: transform var(--transition), box-shadow var(--transition); }
+.home-blog__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.home-blog__card .blog-card__image { aspect-ratio: auto; min-height: 260px; }
+.home-blog__card .blog-card__body { padding: var(--space-xl); align-content: center; gap: var(--space-sm); }
+.home-blog__card .blog-card__title { font-size: var(--fs-h2); line-height: 1.15; text-wrap: balance; }
+.home-blog__card .blog-card__excerpt { font-size: 1rem; }
+.home-blog__more { margin: var(--space-lg) 0 0; }
+@media (max-width: 900px) { .home-blog__card { grid-template-columns: 1fr; } .home-blog__card .blog-card__image { min-height: 160px; } }
+</style>
+<section class="section home-blog" aria-labelledby="home-blog-title">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow-label">From the Blog</span>
+      <h2 id="home-blog-title">What should a Hagerstown homeowner know before an <span class="text-accent">electrical upgrade</span>?</h2>
+    </div>
+    <a class="home-blog__card reveal-up" href="<?php echo esc(blogPostUrl($homePost)); ?>">
+      <?php echo blogCardImage($homePost, '(max-width: 900px) 100vw, 520px'); ?>
+      <div class="blog-card__body">
+        <span class="blog-card__badge"><?php echo esc($homePost['category']); ?></span>
+        <span class="blog-card__meta"><?php echo esc($homePost['date']); ?> &middot; <?php echo esc($homePost['readtime']); ?></span>
+        <h3 class="blog-card__title"><?php echo esc($homePost['title']); ?></h3>
+        <p class="blog-card__excerpt"><?php echo esc($homePost['excerpt']); ?></p>
+        <span class="blog-card__cta">Read Article &rarr;</span>
+      </div>
+    </a>
+    <p class="home-blog__more reveal-up"><a class="btn btn-secondary" href="/blog/">View All Articles</a></p>
+  </div>
+</section>
+<?php endif; ?>
+
 <!-- ============ 10. ESTIMATE SECTION (full form) ============ -->
 <section class="section home-estimate" id="estimate" aria-labelledby="home-estimate-title">
   <div class="container estimate">
