@@ -2,26 +2,111 @@
   "seo": {
     "serp_context": null,
     "target_radius": 25,
-    "primary_keyword": "commercial",
+    "primary_keyword": "electrician hagerstown md",
     "secondary_keywords": [
-      "residential",
-      "industrial",
-      "Panel Upgrades",
-      "EV Charger Installation",
-      "Lighting Installation",
-      "Wiring & Rewiring",
-      "Ceiling Fan Installation",
-      "Generator Installation",
-      "Outlet & Switch Repair",
-      "Emergency Electrician",
-      "Electrical wiring repair  Electrical outlet repair  Light switch repair  Circuit breaker repair  Electrical panel repair  Faulty wiring repair  Power outage troubleshooting  Short circuit repair  Electrical fault detection  Indoor lighting repair  Outdoor lighting repair  Ceiling fan repair  Generator repair  Electrical inspection services",
-      "Home electrical services  Residential electrical repairs  Home rewiring services  House electrical inspections  Electrical upgrades  Home lighting installation  Kitchen electrical services  Bathroom electrical wiring  New home electrical installation  Smart home wiring  Home surge protection  Electrical safety inspections",
-      "Electrician"
-    ]
+      "electrical contractor hagerstown md",
+      "commercial electrician hagerstown md",
+      "residential electrician hagerstown md",
+      "industrial electrician",
+      "electrical panel replacement",
+      "panel upgrade",
+      "ev charger installation",
+      "surge protection",
+      "lighting installation",
+      "ceiling fan installation",
+      "electrical repair",
+      "rewiring",
+      "electrical inspection"
+    ],
+    "templated_city_pages": false,
+    "source": "/workspace/seo/briefs/all-connected-electric.md (P1 SEO BOT, 2026-10-21)"
   },
   "tier": "premium",
   "email": "allconn4electric@gmail.com",
-  "pages": [],
+  "pages": [
+    {
+      "slug": "",
+      "type": "home",
+      "title": "Electrician in Hagerstown, MD | All Connected Electric",
+      "h1": "Hagerstown Electrician for Homes & Businesses"
+    },
+    {
+      "slug": "services",
+      "type": "services_hub"
+    },
+    {
+      "slug": "services/residential-electrical",
+      "type": "service",
+      "service": "Residential Electrical"
+    },
+    {
+      "slug": "services/commercial-electrical",
+      "type": "service",
+      "service": "Commercial Electrical"
+    },
+    {
+      "slug": "services/industrial-electrical",
+      "type": "service",
+      "service": "Industrial Electrical"
+    },
+    {
+      "slug": "services/panel-upgrades",
+      "type": "service",
+      "service": "Panel Upgrades"
+    },
+    {
+      "slug": "services/ev-charger-installation",
+      "type": "service",
+      "service": "EV Charger Installation"
+    },
+    {
+      "slug": "services/electrical-repair",
+      "type": "service",
+      "service": "Electrical Repair & Troubleshooting"
+    },
+    {
+      "slug": "services/lighting-installation",
+      "type": "service",
+      "service": "Lighting Installation"
+    },
+    {
+      "slug": "services/hot-tub-pool-wiring",
+      "type": "service",
+      "service": "Hot Tub & Pool Wiring"
+    },
+    {
+      "slug": "areas-we-serve",
+      "type": "areas",
+      "notes": "Single areas page with GBP map embed and town list (Hagerstown, Frederick, Smithsburg, Williamsport, Boonsboro, Greencastle/Waynesboro PA, Martinsburg WV — pending client confirmation). NO templated city pages."
+    },
+    {
+      "slug": "about",
+      "type": "about"
+    },
+    {
+      "slug": "reviews",
+      "type": "reviews"
+    },
+    {
+      "slug": "projects",
+      "type": "projects"
+    },
+    {
+      "slug": "contact",
+      "type": "contact",
+      "notes": "GBP map embed required"
+    },
+    {
+      "slug": "faq",
+      "type": "faq",
+      "notes": "Content only, NO FAQPage schema"
+    },
+    {
+      "slug": "blog",
+      "type": "blog_placeholder",
+      "notes": "noindex placeholder, no posts"
+    }
+  ],
   "phone": "(301) 704-6333",
   "assets": {
     "logo": null,
@@ -87,13 +172,65 @@
     "usps": [],
     "years": 10,
     "insurance": "",
-    "description": "All Connected Electric LLC is a local business serving Hagerstown, MD and the surrounding area, in business since 2016. Services include commercial, residential, industrial and Panel Upgrades. Contact All Connected Electric LLC at (301) 704-6333 for availability and pricing.",
-    "certifications": []
+    "description": "All Connected Electric is a Hagerstown, MD electrician serving homes and businesses since 2016: residential, commercial and industrial electrical work, panel upgrades, EV charger installation, repair, lighting and hot tub wiring. Call (301) 704-6333.",
+    "certifications": [
+      "Hagerstown Master Electrician EM-1096"
+    ],
+    "license_rules": "Only show 'Hagerstown Master Electrician EM-1096'. Do NOT claim any Maryland state license. Do not show the Greencastle PA licensing address."
   },
   "reviews": [],
   "tagline": "",
   "industry": "Electrician",
-  "services": [],
+  "services": [
+    {
+      "name": "Residential Electrical",
+      "slug": "residential-electrical",
+      "url": "/services/residential-electrical/",
+      "target_keyword": "residential electrician hagerstown md"
+    },
+    {
+      "name": "Commercial Electrical",
+      "slug": "commercial-electrical",
+      "url": "/services/commercial-electrical/",
+      "target_keyword": "commercial electrician hagerstown md"
+    },
+    {
+      "name": "Industrial Electrical",
+      "slug": "industrial-electrical",
+      "url": "/services/industrial-electrical/",
+      "target_keyword": "industrial electrician hagerstown md"
+    },
+    {
+      "name": "Panel Upgrades",
+      "slug": "panel-upgrades",
+      "url": "/services/panel-upgrades/",
+      "target_keyword": "electrical panel upgrade hagerstown md"
+    },
+    {
+      "name": "EV Charger Installation",
+      "slug": "ev-charger-installation",
+      "url": "/services/ev-charger-installation/",
+      "target_keyword": "ev charger installation hagerstown md"
+    },
+    {
+      "name": "Electrical Repair & Troubleshooting",
+      "slug": "electrical-repair",
+      "url": "/services/electrical-repair/",
+      "target_keyword": "electrical repair hagerstown md"
+    },
+    {
+      "name": "Lighting Installation",
+      "slug": "lighting-installation",
+      "url": "/services/lighting-installation/",
+      "target_keyword": "lighting installation hagerstown md"
+    },
+    {
+      "name": "Hot Tub & Pool Wiring",
+      "slug": "hot-tub-pool-wiring",
+      "url": "/services/hot-tub-pool-wiring/",
+      "target_keyword": "hot tub electrical hookup hagerstown md"
+    }
+  ],
   "owner_name": "Andrew Porter",
   "client_slug": "all-connected-electric-llc",
   "form_action": "https://db.pageone.cloud/functions/v1/leads/all-connected-electric-llc",
@@ -101,7 +238,7 @@
   "web_sources": [
     "https://share.google/Q0gkYiNIyGUER6Zwm"
   ],
-  "company_name": "All Connected Electric LLC",
+  "company_name": "All Connected Electric",
   "integrations": {
     "geo": null,
     "bbb_url": null,
@@ -132,7 +269,19 @@
     "Hagerstown"
   ],
   "address_public": true,
-  "business_hours": "",
+  "business_hours": {
+    "monday": "7:30 AM–5:00 PM",
+    "tuesday": "7:30 AM–5:00 PM",
+    "wednesday": "7:30 AM–5:00 PM",
+    "thursday": "7:30 AM–5:00 PM",
+    "friday": "7:30 AM–5:00 PM",
+    "saturday": "9:00 AM–1:00 PM",
+    "sunday": "Closed",
+    "schema_openingHours": [
+      "Mo-Fr 07:30-17:00",
+      "Sa 09:00-13:00"
+    ]
+  },
   "image_curation": null,
   "research_brief": {
     "gbp": null,
@@ -190,5 +339,26 @@
   },
   "lead_notification_email": "allconn4electric@gmail.com",
   "lead_notification_phone": "(301) 704-6333",
-  "google_business_profile_url": "https://share.google/Q0gkYiNIyGUER6Zwm"
+  "google_business_profile_url": "https://share.google/Q0gkYiNIyGUER6Zwm",
+  "legal_name": "All Connected Electric LLC",
+  "gbp": {
+    "name": "All Connected Electric",
+    "place_id": "ChIJ8fq1qxOTyYkR47kOuL3zo7E",
+    "cid": "12800342562079422947",
+    "maps_url": "https://maps.google.com/maps?cid=12800342562079422947",
+    "map_embed_url": "https://maps.google.com/maps?cid=12800342562079422947&output=embed",
+    "map_embed_required": true,
+    "geo": {
+      "lat": 39.679318,
+      "lng": -77.679471
+    }
+  },
+  "constraints": {
+    "faqpage_schema": false,
+    "llms_txt": false,
+    "blog_posts": false,
+    "blog_placeholder_noindex": true,
+    "aggregate_rating_schema": false,
+    "templated_city_pages": false
+  }
 }
