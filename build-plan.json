@@ -30,13 +30,24 @@
     "recommended_hero_image": null
   },
   "design": {
-    "fonts": {},
-    "notes": "",
+    "fonts": {
+      "heading": "Space Grotesk",
+      "body": "Inter",
+      "accent": "Barlow Condensed"
+    },
+    "notes": "Phase 2: archetype minimal-tech (electrical). Typography-forward hero, hairline dividers, reveals only. Header is a text logo (bolt tile + wordmark) until a logo file is added to /assets/images/ (siteLogo() auto-detects it).",
     "style": "modern",
     "colors": {
-      "extracted_from_logo": true
+      "extracted_from_logo": false,
+      "source": "industry palette (design-aesthetics-2026 A4, Electrical) — no logo on file at Phase 2; re-derive from the logo when supplied",
+      "primary": "#11151a",
+      "secondary": "#4b5563",
+      "accent": "#fed530",
+      "paper": "#f5f6f7",
+      "ink": "#0f1419"
     },
-    "logo_analysis": {}
+    "logo_analysis": {},
+    "archetype": "minimal-tech"
   },
   "domain": "all-connected-electric-llc",
   "phases": [

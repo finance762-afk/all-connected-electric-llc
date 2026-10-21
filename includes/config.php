@@ -185,11 +185,12 @@ $googleAnalyticsId = 'G-XXXXXXXXXX';
  *   logo_analysis is empty). Phase 2 logo analysis fills these. Until then the
  *   framework.css :root defaults render.
  * ------------------------------------------------------------------------- */
-$colors = [
-    'primary'   => '',
-    'secondary' => '',
-    'accent'    => '',
+$colors = [   // Phase 2: industry palette (no logo yet) — mirrors framework.css :root
+    'primary'   => '#11151a',
+    'secondary' => '#4b5563',
+    'accent'    => '#fed530',
 ];
+$archetype = 'minimal-tech';   // build-plan design.archetype
 
 /* ---------------------------------------------------------------------------
  * Company age — intake: "in business since 2016" (content.years = 10)
@@ -207,7 +208,7 @@ $businessHours = '';
  * CSS cache-bust — SINGLE source of truth. Pages MUST NOT set their own.
  * Bump this on every framework.css change.
  * ------------------------------------------------------------------------- */
-$cssVersion = '1';
+$cssVersion = '2';
 
 /* ---------------------------------------------------------------------------
  * Forms — Page One leads endpoint (build-plan form_action, verbatim)
