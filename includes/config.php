@@ -199,16 +199,26 @@ $yearEstablished = 2016;
 $yearsInBusiness = (int) date('Y') - $yearEstablished;
 
 /* ---------------------------------------------------------------------------
- * Hours — build-plan business_hours is empty. Do not fabricate; omit hours
- *   from schema/footer until the client supplies them.
+ * Hours — build-plan business_hours (plan regenerated 2026-10-21). $businessHours is the
+ *   visible line (footer + contact); $openingHoursSpec mirrors it in the Electrician schema.
  * ------------------------------------------------------------------------- */
-$businessHours = '';
+$businessHours = 'Mon–Fri 7:30 AM–5:00 PM · Sat 9:00 AM–1:00 PM · Sun Closed';
+$openingHoursSpec = [
+    ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'opens' => '07:30', 'closes' => '17:00'],
+    ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => ['Saturday'], 'opens' => '09:00', 'closes' => '13:00'],
+];
+
+/* ---------------------------------------------------------------------------
+ * Credentials — build-plan content.certifications. license_rules: show ONLY this
+ *   credential; never claim a Maryland state license; never show the Greencastle PA address.
+ * ------------------------------------------------------------------------- */
+$licenseLabel = 'Hagerstown Master Electrician EM-1096';
 
 /* ---------------------------------------------------------------------------
  * CSS cache-bust — SINGLE source of truth. Pages MUST NOT set their own.
  * Bump this on every framework.css change.
  * ------------------------------------------------------------------------- */
-$cssVersion = '2';
+$cssVersion = '5';
 
 /* ---------------------------------------------------------------------------
  * Forms — Page One leads endpoint (build-plan form_action, verbatim)
@@ -219,15 +229,16 @@ $leadNotificationEmail = 'allconn4electric@gmail.com';
 $leadNotificationPhone = '(301) 704-6333';
 
 /* ---------------------------------------------------------------------------
- * Google Business Profile (build-plan integrations). No map embed or geo
- *   coordinates were supplied — leave them empty, never guess.
+ * Google Business Profile (build-plan gbp + integrations). Map embed and geo come from
+ *   build-plan gbp (cid embed URL, lat/lng) — never guessed.
  * ------------------------------------------------------------------------- */
+$gbpName          = 'All Connected Electric';               // GBP listing name (schema alternateName; $siteName is the legal name)
 $gbpPlaceId       = 'ChIJ8fq1qxOTyYkR47kOuL3zo7E';
 $gbpMapsUrl       = 'https://share.google/Q0gkYiNIyGUER6Zwm';
 $directionsUrl    = 'https://www.google.com/maps/dir/?api=1&destination=place_id:ChIJ8fq1qxOTyYkR47kOuL3zo7E';
 $reviewRequestUrl = 'https://search.google.com/local/writereview?placeid=ChIJ8fq1qxOTyYkR47kOuL3zo7E';
-$gbpMapEmbed      = '';
-$geo              = null;
+$gbpMapEmbed      = 'https://maps.google.com/maps?cid=12800342562079422947&output=embed';
+$geo              = ['lat' => 39.679318, 'lng' => -77.679471];
 $acceptsSms       = false;
 
 /* ---------------------------------------------------------------------------

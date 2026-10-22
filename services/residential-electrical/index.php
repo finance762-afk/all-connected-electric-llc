@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'residential-electrical';
 $pageService     = 'Residential Electrical';
-$pageTitle       = 'Residential Electrical Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Hagerstown Residential Electrician | All Connected Electric';
 $pageDescription = 'Home electrical repairs, kitchen and bathroom circuits, surge protection, smart home wiring and safety inspections in Hagerstown, MD. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
@@ -44,7 +44,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'panel-upgrades',       'icon' => 'zap',       'desc' => 'New panels and bigger services for houses that have outgrown theirs.', 'bullets' => ['Room for new circuits', 'Worn breakers replaced', 'Capacity for EVs and heat pumps']],
@@ -354,7 +353,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -409,7 +408,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Home estimate</span>
       <h2 id="sp-cta-title">Want someone to look at the electrical in your house?</h2>
-      <p>Send the room, the symptom and roughly how old the house is, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to set a time. If an outlet or switch is hot to the touch, turn that circuit off at the panel and leave it off until it has been checked.</p>
+      <p>Send the room, the symptom and roughly how old the house is, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to set a time. If an outlet or switch is hot to the touch, turn that circuit off at the panel and leave it off until it has been checked.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

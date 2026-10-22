@@ -19,8 +19,8 @@ $companyPhoneE164  = $phoneRaw;
 $companyAddress    = $address['street'] . ', ' . $address['city'] . ', ' . $address['state'] . ' ' . $address['zip'];
 $lastUpdated       = 'October 21, 2026';
 
-$pageTitle       = 'Terms of Service | ' . $siteName;
-$pageDescription = 'The terms for using the ' . $siteName . ' website and for hiring the company for electrical work in Hagerstown, MD: estimates, payment and law.';
+$pageTitle       = 'Terms of Service | All Connected Electric | Hagerstown, MD';
+$pageDescription = 'The terms for using the All Connected Electric LLC website and for hiring the company for electrical work in Hagerstown, MD: estimates, payment and the law.';
 $canonicalUrl    = $siteUrl . '/terms/';
 $ogImage         = '';
 $currentPage     = 'terms';
@@ -42,7 +42,23 @@ $legalUpdated = $lastUpdated;
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-hero.php'; ?>
+<?php $legalEyebrow = $legalEyebrow ?? 'Legal'; ?>
+<style><?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-page.css'; ?></style>
+
+<section class="hero hero--legal" aria-labelledby="legal-hero-title">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li><li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><span aria-current="page"><?php echo esc($legalTitle); ?></span></li>
+      </ol>
+    </nav>
+    <span class="eyebrow"><?php echo esc($legalEyebrow); ?></span>
+    <h1 id="legal-hero-title"><?php echo esc($legalTitle); ?></h1>
+    <p class="legal-lede"><?php echo esc($legalLede); ?></p>
+    <p class="legal-updated">Last Updated: <time datetime="<?php echo esc(date('Y-m-d', strtotime($legalUpdated))); ?>"><?php echo esc($legalUpdated); ?></time></p>
+  </div>
+</section>
 
 <section class="legal-section" aria-label="Terms of Service text">
   <div class="container">

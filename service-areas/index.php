@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * /service-areas/hagerstown/index.php.
  */
 $pageTitle       = 'Electrician Service Areas | Hagerstown & Washington County';
-$pageDescription = 'Where All Connected Electric LLC works: Hagerstown, MD and the surrounding Washington County area. See the Hagerstown page or call (301) 704-6333.';
+$pageDescription = 'Where All Connected Electric LLC works: Hagerstown, MD and the surrounding Washington County area. See the Hagerstown page or call (301) 704-6333 to book.';
 $canonicalUrl    = $siteUrl . '/service-areas/';
 $ogImage         = '';
 $currentPage     = 'areas';
@@ -62,7 +62,6 @@ $schemaMarkup = [
         ['name' => 'Home', 'url' => $siteUrl . '/'],
         ['name' => 'Service Areas', 'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($pageFaqs),
 ];
 /* Lead form: p1_lead_hidden_fields('hero') emits _next, _honey, form_location, consent fields,
    p1_attribution_fields('hero') and the spam shield in one call (includes/p1-form-helpers.php). */
@@ -279,7 +278,7 @@ $schemaMarkup = [
 <?php foreach ($pageFaqs as $hubFaqIdx => $hubFaq): ?>
       <details class="faq"<?php echo $hubFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($hubFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($hubFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($hubFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -296,7 +295,7 @@ $schemaMarkup = [
     <div class="reveal-left">
       <span class="eyebrow">Estimate</span>
       <h2 id="sa-cta-title">Get an estimate for electrical work in Hagerstown and Washington County</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

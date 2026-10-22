@@ -1,0 +1,9 @@
+# robots.txt — All Connected Electric LLC
+# All crawlers (search and AI) are allowed. Legal pages are intentionally crawlable.
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /assets/js/
+Disallow: /thank-you
+
+Sitemap: https://all-connected-electric-llc.pageone.cloud/sitemap.xml

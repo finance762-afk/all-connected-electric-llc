@@ -90,7 +90,7 @@ $schemaMarkup = [];
       <div class="hero-copy">
         <span class="eyebrow">Page not found</span>
         <h1 class="hero-title" id="nf-title">That page has <span class="text-accent">tripped</span> a breaker</h1>
-        <p class="hero-answer">The page you tried to open is not on this site, or it has moved. Pick one of the pages below, or call <?php echo esc($siteName); ?> at <?php echo esc(formatPhone($phone)); ?> and ask for what you need.</p>
+        <p class="hero-answer">The page you tried to open is not on this site, or it has moved. Pick one of the pages below, or call <?php echo esc($siteName); ?> at <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> and ask for what you need.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="/"><?php echo icon('house', 18); ?>Back to the homepage</a>
           <a class="link-call" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>or call <?php echo esc(formatPhone($phone)); ?></a>
@@ -149,7 +149,7 @@ $schemaMarkup = [];
     <div class="reveal-up">
       <span class="eyebrow-label">Still stuck?</span>
       <h2 id="sp-cta-title">Tell the office what you were looking for</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> or send a request, and <?php echo esc($siteName); ?> will point you to the right answer or set a time to look at your electrical work in <?php echo esc($address['city']); ?>.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send a request, and <?php echo esc($siteName); ?> will point you to the right answer or set a time to look at your electrical work in <?php echo esc($address['city']); ?>.</p>
     </div>
     <div class="actions reveal-up">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

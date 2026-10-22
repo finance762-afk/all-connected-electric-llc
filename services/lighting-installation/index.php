@@ -8,12 +8,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * No client photos are on disk (build-plan assets.images is empty): type-led hero, no gallery, no before/after.
  * Every fact traces to build-plan.json / config.php or is general lighting/electrical knowledge stated as such;
  * prices, fixture brands, smart-control systems, drywall patching and credentials are NOT claimed — see /content-confirmations.json.
- * No research-brief FAQ fits this page, so there is no FAQ section and no FAQPage node.
+ * No research-brief FAQ fits this page, so there is no FAQ section.
  */
 $pageSlug        = 'lighting-installation';
 $pageService     = 'Lighting Installation';
-$pageTitle       = 'Lighting Installation Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Recessed, fixture, under-cabinet and outdoor lighting installed or repaired in Hagerstown, MD homes and businesses. All Connected Electric LLC, (301) 704-6333.';
+$pageTitle       = 'Hagerstown Lighting Installation | All Connected Electric';
+$pageDescription = 'Recessed, fixture, under-cabinet and outdoor lighting installed or repaired in Hagerstown, MD homes and businesses. Call All Connected Electric: (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -40,7 +40,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'ceiling-fan-installation', 'icon' => 'wind',  'desc' => 'Ceiling fans installed or repaired on boxes rated for the weight.', 'bullets' => ['Fan-rated ceiling boxes', 'Separate fan and light control', 'Wobbling fans steadied']],
@@ -333,7 +332,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Lighting estimate</span>
       <h2 id="sp-cta-title">Want new lights or a dead fixture fixed in Hagerstown?</h2>
-      <p>Tell us the room, the ceiling and what you have in mind, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to look at the space and the circuit before pricing the work.</p>
+      <p>Tell us the room, the ceiling and what you have in mind, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to look at the space and the circuit before pricing the work.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

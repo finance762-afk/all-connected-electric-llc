@@ -24,8 +24,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'hagerstown';
 $areaName        = 'Hagerstown';
-$pageTitle       = 'Hagerstown Electrician | Older Homes & Shops | All Connected';
-$pageDescription = 'All Connected Electric LLC, on Leitersburg Pike in Hagerstown, MD: electrician for older homes, businesses and industrial sites. Call (301) 704-6333.';
+$pageTitle       = 'Hagerstown Area Electrician | All Connected Electric LLC';
+$pageDescription = 'All Connected Electric LLC, on Leitersburg Pike in Hagerstown, MD: electrician for older homes, businesses and industrial sites. Call (301) 704-6333 to book.';
 $canonicalUrl    = $siteUrl . '/service-areas/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'areas';
@@ -89,7 +89,6 @@ $schemaMarkup = [
         ['name' => 'Service Areas', 'url' => $siteUrl . '/service-areas/'],
         ['name' => $areaName . ', ' . $address['state'], 'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($pageFaqs),
 ];
 /* Lead form: p1_lead_hidden_fields('hero') emits _next, _honey, form_location, consent fields,
    p1_attribution_fields('hero') and the spam shield in one call (includes/p1-form-helpers.php). */
@@ -279,7 +278,7 @@ $schemaMarkup = [
         <address>747 Northern Avenue<br>Hagerstown, MD 21742</address>
       </div>
     </div>
-    <p class="sp-table-note">Hagerstown mailing addresses can sit in either jurisdiction. Confirm the office, current hours and fees with it directly before a permit is filed; both offices publish their own application forms. Ask <?php echo esc($siteName); ?> how the permit fits into your job when you call <?php echo esc(formatPhone($phone)); ?>.</p>
+    <p class="sp-table-note">Hagerstown mailing addresses can sit in either jurisdiction. Confirm the office, current hours and fees with it directly before a permit is filed; both offices publish their own application forms. Ask <?php echo esc($siteName); ?> how the permit fits into your job when you call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>.</p>
   </div>
 </section>
 
@@ -382,7 +381,7 @@ if ($areaReviews !== ''): ?>
 <?php foreach ($pageFaqs as $areaFaqIdx => $areaFaq): ?>
       <details class="faq"<?php echo $areaFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($areaFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($areaFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($areaFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -399,7 +398,7 @@ if ($areaReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Estimate in <?php echo esc($areaName); ?></span>
       <h2 id="ar-cta-title">Get an estimate for electrical work in <?php echo esc($areaName); ?></h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job. If a panel is hot or something smells of burning, switch off the main if it is safe to do so and call right away.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job. If a panel is hot or something smells of burning, switch off the main if it is safe to do so and call right away.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'ev-charger-installation';
 $pageService     = 'EV Charger Installation';
-$pageTitle       = 'EV Charger Installation Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Level 2 EV charger installation in Hagerstown, MD. All Connected Electric LLC checks your panel and runs a dedicated 240-volt circuit to where you park.';
+$pageTitle       = 'Hagerstown EV Charger Installation | All Connected Electric';
+$pageDescription = 'Level 2 EV charger installation in Hagerstown, MD. All Connected Electric checks your panel, then runs a dedicated 240-volt circuit. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -44,7 +44,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'panel-upgrades',         'icon' => 'zap',   'desc' => 'More capacity when the load calculation says the charger will not fit.', 'bullets' => ['Service capacity added', 'Room for new circuits', 'Old panels replaced safely']],
@@ -314,7 +313,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -369,7 +368,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Charger estimate</span>
       <h2 id="sp-cta-title">Want a price on an EV charger install in Hagerstown?</h2>
-      <p>Send the car, the charger model and a photo of your panel, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to look at the panel and the route to your parking spot.</p>
+      <p>Send the car, the charger model and a photo of your panel, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to look at the panel and the route to your parking spot.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

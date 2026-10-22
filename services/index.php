@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * (signature section), the service-area statement and research-brief FAQs (cost, license).
  * No client photos on disk: cards are icon-led, as on the homepage. No price, hours, license or "free" claims.
  */
-$pageTitle       = 'Electrical Services Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Electrical Services Hagerstown, MD | All Connected Electric';
 $pageDescription = 'Residential, commercial and industrial electrical services in Hagerstown, MD: panels, EV chargers, lighting, rewiring, generators and repairs. (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/';
 $ogImage         = '';
@@ -54,7 +54,7 @@ $pageFaqs = [
      'a' => 'Maryland requires electrical contractors to hold a license, and you can look one up through the Maryland State Board of Master Electricians, part of the Maryland Department of Labor. Ask any electrician for the license number and for proof of general liability and workers\' compensation coverage before work starts.'],
 ];
 
-/* Schema: CollectionPage + ItemList of every service page, BreadcrumbList, FAQPage. Provider = homepage #organization. */
+/* Schema: CollectionPage + ItemList of every service page, BreadcrumbList (FAQs are visible text only). Provider = homepage #organization. */
 $hubRoot = rtrim($siteUrl, '/');
 $hubItems = [];
 foreach ($services as $hubIdx => $hubSvc) {
@@ -72,7 +72,6 @@ $schemaMarkup = [
         ['name' => 'Home', 'url' => $siteUrl . '/'],
         ['name' => 'Services', 'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($pageFaqs),
 ];
 /* Lead form: p1_lead_hidden_fields('hero') emits _next, _honey, form_location, consent fields,
    p1_attribution_fields('hero') and the spam shield in one call (includes/p1-form-helpers.php). */
@@ -321,7 +320,7 @@ $schemaMarkup = [
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -335,7 +334,7 @@ $schemaMarkup = [
     <div class="reveal-left">
       <span class="eyebrow">Estimate request</span>
       <h2 id="sp-cta-title">Have electrical work in Hagerstown that needs a price?</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> or send the form with what is going on and where. All Connected Electric LLC will follow up to set a time to look at the job.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send the form with what is going on and where. All Connected Electric LLC will follow up to set a time to look at the job.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

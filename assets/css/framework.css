@@ -64,6 +64,8 @@
   --color-gray-light: var(--color-line); --color-gray-dark: var(--color-ink-2);
   --color-bg: var(--color-paper); --color-bg-alt: var(--color-paper-2); --color-bg-dark: var(--color-dark);
   --color-border: var(--color-line); --color-text: var(--color-ink); --color-text-light: var(--color-muted);
+  /* v8 component aliases (includes/*.php widgets) */
+  --bg-alt: var(--color-paper-2); --text-light: var(--color-muted); --container-max: var(--container); --ba-pos: 50%;
   --color-success: #2f7d4a; --color-warning: #c98a1a; --color-danger: #b83232; --color-star: #f2b84b;
   --color-card-tint-1: color-mix(in srgb, var(--color-primary) 8%, white);
   --color-card-tint-2: color-mix(in srgb, var(--color-secondary) 9%, white);
@@ -242,8 +244,9 @@ section, .section { position: relative; padding-block: var(--section-pad); overf
 @media (max-width: 560px) { .header-cta .btn, .header-actions .btn, .navbar-cta .btn-nav-cta, .navbar-cta .btn-primary, .navbar-cta .btn, .header-cta .btn-primary, .header-actions .btn-primary { display: none; } .brand-sub, .logo-tagline { display: none; } }
 
 /* Mobile overlay — lives OUTSIDE <header> (backdrop-filter containing block) */
-.mobile-menu { position: fixed; inset: 0; z-index: 950; background: var(--color-dark); color: #fff; padding: calc(var(--nav-height) + 1rem) clamp(1.25rem, 6vw, 2.5rem) 2rem; overflow-y: auto; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
-.mobile-menu.active, .mobile-menu[aria-hidden="false"] { opacity: 1; visibility: visible; }
+.mobile-menu { position: fixed; inset: 0; z-index: 950; background: var(--color-dark); color: #fff; padding: calc(var(--nav-height) + 1rem) clamp(1.25rem, 6vw, 2.5rem) 2rem; overflow-y: auto; opacity: 0; visibility: hidden; display: none; transition: opacity .25s, visibility .25s, display .25s allow-discrete; }
+.mobile-menu.active, .mobile-menu[aria-hidden="false"] { display: block; opacity: 1; visibility: visible; }
+@starting-style { .mobile-menu.active, .mobile-menu[aria-hidden="false"] { opacity: 0; } } /* closed overlay leaves layout entirely; fade kept via allow-discrete */
 .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
 .mobile-menu > nav > ul > li > a, .mobile-menu .mobile-menu__links > li > a, .mobile-menu .mm-top > li > a, .mobile-menu-inner > nav > ul > li > a { display: block; padding: .8rem 0; font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.1); }
 .mobile-menu .sub, .mobile-submenu { padding: .4rem 0 .6rem; display: grid; grid-template-columns: 1fr 1fr; gap: .1rem .8rem; }

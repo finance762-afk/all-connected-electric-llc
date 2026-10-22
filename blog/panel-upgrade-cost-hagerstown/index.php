@@ -50,7 +50,6 @@ $schemaMarkup = [
         ['name' => 'Blog', 'url' => $siteUrl . '/blog/'],
         ['name' => $post['title'], 'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($pageFaqs),
 ];
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php'; ?>
@@ -162,7 +161,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
 <?php foreach ($pageFaqs as $faqIdx => $faqItem): ?>
           <details class="faq"<?php echo $faqIdx === 0 ? ' open' : ''; ?>>
             <summary><?php echo esc($faqItem['q']); ?></summary>
-            <p class="faq-answer"><?php echo esc($faqItem['a']); ?></p>
+            <p class="faq-answer"><?php echo linkContacts(esc($faqItem['a'])); ?></p>
           </details>
 <?php endforeach; ?>
         </section>

@@ -10,8 +10,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Every fact traces to build-plan.json / config.php. NOT claimed (no intake answer yet, see /content-confirmations.json):
  * license number, insurance, certifications, owner's pre-2016 background, prices, hours, towns beyond Hagerstown.
  */
-$pageTitle       = 'About All Connected Electric LLC | Electrician in Hagerstown, MD';
-$pageDescription = 'All Connected Electric LLC is a Hagerstown, MD electrical contractor owned by Andrew Porter and in business since 2016, serving homes, businesses and industry.';
+$pageTitle       = 'About Us | All Connected Electric LLC | Hagerstown, MD';
+$pageDescription = 'All Connected Electric LLC is a Hagerstown, MD electrical contractor owned by Andrew Porter since 2016. Meet the team, then call (301) 704-6333 for an estimate.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = '';
 $currentPage     = 'about';
@@ -274,7 +274,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Talk to the office</span>
       <h2 id="sp-cta-title">Ready to talk through electrical work in Hagerstown?</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> and describe the job. <?php echo esc($siteName); ?> will tell you what it would look at first and set a time to see it.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> and describe the job. <?php echo esc($siteName); ?> will tell you what it would look at first and set a time to see it.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

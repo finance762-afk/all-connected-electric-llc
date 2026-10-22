@@ -4,7 +4,7 @@
  * Canonical copy: ~/crm/references/components/p1-form-helpers.php (scaffold copies it to /includes/).
  *
  * Emits, in one call, everything the leads endpoint expects besides the visible fields:
- *   _next (thank-you redirect) · _honey honeypot · form_location · consent_version/consent_page
+ *   _next (thank-you redirect) · _honey honeypot · form_location · consent_version/consent_page (+ _consent_version/_consent_page for the leads endpoint)
  *   · p1_attribution_fields($formId) (first-touch + submit-page attribution, from attribution.php)
  *   · the spam shield (_ft signed timestamp + _js interaction flag) exactly as
  *     scripts/patch-leads-spamshield.py renders it on hand-written forms.
@@ -20,6 +20,9 @@ if (!function_exists('p1_lead_hidden_fields')) {
         $out .= '<input type="hidden" name="form_location" value="' . $h($formId) . '">' . "\n";
         $out .= '<input type="hidden" name="consent_version" value="v2.1">' . "\n";
         $out .= '<input type="hidden" name="consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
+        // leads endpoint reads the underscored pair into consent_records (legal-compliance.md field contract)
+        $out .= '<input type="hidden" name="_consent_version" value="v2.1">' . "\n";
+        $out .= '<input type="hidden" name="_consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
         foreach ($extra as $k => $v) {
             $out .= '<input type="hidden" name="' . $h($k) . '" value="' . $h($v) . '">' . "\n";
         }

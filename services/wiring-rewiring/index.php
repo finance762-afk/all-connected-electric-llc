@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'wiring-rewiring';
 $pageService     = 'Wiring & Rewiring';
-$pageTitle       = 'Wiring & Rewiring Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Wiring & Rewiring in Hagerstown, MD | All Connected Electric';
 $pageDescription = 'House rewiring, faulty wiring repair and new wiring for renovations in Hagerstown, MD. Knob-and-tube and ungrounded circuits replaced. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
@@ -42,7 +42,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'panel-upgrades',        'icon' => 'zap',       'desc' => 'A panel with the capacity and space new circuits need.',          'bullets' => ['Fuse boxes replaced', 'Breakers matched to wiring', 'Room for added circuits']],
@@ -342,7 +341,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -397,7 +396,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Rewiring estimate</span>
       <h2 id="sp-cta-title">Want to know what is behind your walls?</h2>
-      <p>Send the year the house was built, if you know it, and what you have noticed, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to set up a walk-through. If a plate is warm or you smell hot plastic, switch that circuit off at the panel and leave it off.</p>
+      <p>Send the year the house was built, if you know it, and what you have noticed, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to set up a walk-through. If a plate is warm or you smell hot plastic, switch that circuit off at the panel and leave it off.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

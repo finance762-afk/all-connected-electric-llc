@@ -8,11 +8,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * No client photos are on disk (build-plan assets.images is empty): type-led hero, no gallery, no before/after.
  * Every fact traces to build-plan.json / config.php or is general electrical knowledge stated as such;
  * voltages/equipment worked on, schedules, credentials and permits-pulled are NOT claimed — see /content-confirmations.json.
- * No research-brief FAQ fits this page, so there is no FAQ section and no FAQPage node.
+ * No research-brief FAQ fits this page, so there is no FAQ section.
  */
 $pageSlug        = 'industrial-electrical';
 $pageService     = 'Industrial Electrical';
-$pageTitle       = 'Industrial Electrical Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Hagerstown Industrial Electrician | All Connected Electric';
 $pageDescription = 'Industrial electrical work in Hagerstown, MD: power distribution, equipment circuits and fault finding for warehouses, shops and plants. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
@@ -40,7 +40,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'commercial-electrical', 'icon' => 'building-2', 'desc' => 'Circuits, lighting and repairs for the office side of the building.', 'bullets' => ['Offices and front counters', 'Dedicated equipment circuits', 'Exit and emergency lighting']],
@@ -361,7 +360,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Industrial estimate</span>
       <h2 id="sp-cta-title">Adding equipment or chasing a fault at a Hagerstown site?</h2>
-      <p>Send the nameplate photos and the site address, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to walk the floor and the service before anything is priced.</p>
+      <p>Send the nameplate photos and the site address, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to walk the floor and the service before anything is priced.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

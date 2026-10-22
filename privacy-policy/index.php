@@ -19,8 +19,8 @@ $companyPhoneE164  = $phoneRaw;
 $companyAddress    = $address['street'] . ', ' . $address['city'] . ', ' . $address['state'] . ' ' . $address['zip'];
 $lastUpdated       = 'October 21, 2026';
 
-$pageTitle       = 'Privacy Policy | ' . $siteName;
-$pageDescription = 'How ' . $siteName . ' in Hagerstown, MD collects, uses and protects your information on this website and through its contact forms.';
+$pageTitle       = 'Privacy Policy | All Connected Electric | Hagerstown, MD';
+$pageDescription = 'How All Connected Electric LLC in Hagerstown, MD collects, uses and protects your information on this website and its contact forms. Read your privacy rights.';
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $ogImage         = '';
 $currentPage     = 'privacy-policy';
@@ -42,7 +42,23 @@ $legalUpdated = $lastUpdated;
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-hero.php'; ?>
+<?php $legalEyebrow = $legalEyebrow ?? 'Legal'; ?>
+<style><?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-page.css'; ?></style>
+
+<section class="hero hero--legal" aria-labelledby="legal-hero-title">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li><li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><span aria-current="page"><?php echo esc($legalTitle); ?></span></li>
+      </ol>
+    </nav>
+    <span class="eyebrow"><?php echo esc($legalEyebrow); ?></span>
+    <h1 id="legal-hero-title"><?php echo esc($legalTitle); ?></h1>
+    <p class="legal-lede"><?php echo esc($legalLede); ?></p>
+    <p class="legal-updated">Last Updated: <time datetime="<?php echo esc(date('Y-m-d', strtotime($legalUpdated))); ?>"><?php echo esc($legalUpdated); ?></time></p>
+  </div>
+</section>
 
 <section class="legal-section" aria-label="Privacy Policy text">
   <div class="container">

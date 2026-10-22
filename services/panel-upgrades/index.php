@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'panel-upgrades';
 $pageService     = 'Panel Upgrades';
-$pageTitle       = 'Panel Upgrades Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Panel Upgrades in Hagerstown, MD | All Connected Electric';
 $pageDescription = 'Electrical panel replacement, service upgrades and breaker repair in Hagerstown, MD. All Connected Electric LLC checks the load first. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
@@ -44,7 +44,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'ev-charger-installation', 'icon' => 'battery-charging', 'desc' => 'A dedicated 240-volt circuit sized for the charger you bought.', 'bullets' => ['Panel capacity checked first', 'Hardwired or plug-in chargers', 'Garage or driveway installs']],
@@ -349,7 +348,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -404,7 +403,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Panel estimate</span>
       <h2 id="sp-cta-title">Want a price on a panel upgrade in Hagerstown?</h2>
-      <p>Send the main breaker size and what you plan to add, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to set a time to look at the panel. If the cover is hot or smells of burning, switch off the main if it is safe to do so and call right away.</p>
+      <p>Send the main breaker size and what you plan to add, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to set a time to look at the panel. If the cover is hot or smells of burning, switch off the main if it is safe to do so and call right away.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

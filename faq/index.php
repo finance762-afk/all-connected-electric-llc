@@ -9,10 +9,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * 19 questions in four categories. The permit, panel, EV charger, cost and license answers follow the research brief; the rest
  * are general electrical-code knowledge or facts from config.php. Nothing answers for the company on: license number, insurance, free estimates, prices,
  * hours, callback time, towns beyond Hagerstown, brands or 24/7 service (all unconfirmed — see /content-confirmations.json).
- * FAQPage schema is an AI-comprehension aid only; FAQ rich results are deprecated.
+ * FAQs are visible text only — no FAQPage JSON-LD (QA blocker since 2026-10-20).
  */
-$pageTitle       = 'Electrician FAQ | Hagerstown, MD | All Connected Electric LLC';
-$pageDescription = 'Answers about electrical permits, panel upgrades, EV chargers, generators, pricing and how a job runs in Hagerstown and Washington County, MD.';
+$pageTitle       = 'Electrician FAQ | Hagerstown, MD | All Connected Electric';
+$pageDescription = 'Answers on electrical permits, panel upgrades, EV chargers, generators and pricing in Hagerstown and Washington County, MD. Still unsure? Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/faq/';
 $ogImage         = '';
 $currentPage     = 'faq';
@@ -21,7 +21,7 @@ $heroPreload     = [];
 
 $phoneText = formatPhone($phone);
 
-/* Each item: q, a (plain text, also used in the FAQPage schema), optional link => [href, label]. */
+/* Each item: q, a (plain text), optional link => [href, label]. */
 $faqCategories = [
     [
         'id' => 'general', 'icon' => 'info', 'title' => 'General questions about All Connected Electric LLC',
@@ -122,7 +122,6 @@ $schemaMarkup = [
         ['name' => 'Home', 'url' => $siteUrl . '/'],
         ['name' => 'FAQ',  'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($faqFlat),
 ];
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php'; ?>
@@ -220,7 +219,7 @@ $schemaMarkup = [
 <?php foreach ($faqCat['items'] as $faqItemIdx => $faqItem): ?>
             <details class="faq"<?php echo ($faqCatIdx === 0 && $faqItemIdx === 0) ? ' open' : ''; ?>>
               <summary><?php echo esc($faqItem['q']); ?></summary>
-              <p class="faq-answer"><?php echo esc($faqItem['a']); ?></p>
+              <p class="faq-answer"><?php echo linkContacts(esc($faqItem['a'])); ?></p>
 <?php if (!empty($faqItem['link'])): ?>
               <a class="faq-more" href="<?php echo esc($faqItem['link'][0]); ?>"><?php echo esc($faqItem['link'][1]); ?> <?php echo icon('arrow-right', 14); ?></a>
 <?php endif; ?>
@@ -253,7 +252,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
     <div class="reveal-left">
       <span class="eyebrow">Talk to the office</span>
       <h2 id="sp-cta-title">Would a person answer your electrical question faster?</h2>
-      <p>Call <?php echo esc($phoneText); ?> and describe what is going on. <?php echo esc($siteName); ?> serves Hagerstown and the surrounding area of Washington County.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc($phoneText); ?></a> and describe what is going on. <?php echo esc($siteName); ?> serves Hagerstown and the surrounding area of Washington County.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc($phoneText); ?></a>

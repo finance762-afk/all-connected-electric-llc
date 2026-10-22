@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
  * so cards use the typeset icon tile (blogCardImage()). The full topic cluster grows post-launch via the design-portal Blogs tab.
  */
 $pageTitle       = 'Electrical Advice for Hagerstown, MD Homeowners | Blog';
-$pageDescription = 'Plain-language electrical articles from All Connected Electric LLC in Hagerstown, MD: panel upgrade costs, generator hookups and what to ask before you hire.';
+$pageDescription = 'Plain-language electrical articles from All Connected Electric LLC in Hagerstown, MD: panel upgrade costs, generator hookups and what to ask before hiring.';
 $canonicalUrl    = $siteUrl . '/blog/';
 $ogImage         = '';
 $currentPage     = 'blog';
@@ -102,7 +102,7 @@ $blogRest     = array_slice($blogPosts, 1);
     <div class="reveal-left">
       <span class="eyebrow">Have a question of your own?</span>
       <h2 id="bl-cta-title">Ask an electrician in Hagerstown about your panel or wiring</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send the details, and <?php echo esc($siteName); ?> will follow up to set a time to look at the job.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

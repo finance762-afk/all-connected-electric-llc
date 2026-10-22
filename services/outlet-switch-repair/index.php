@@ -12,8 +12,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'outlet-switch-repair';
 $pageService     = 'Outlet & Switch Repair';
-$pageTitle       = 'Outlet & Switch Repair Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Dead outlets, faulty light switches, GFCI outlets and short circuits repaired in Hagerstown, MD homes and businesses. All Connected Electric LLC: (301) 704-6333.';
+$pageTitle       = 'Hagerstown Outlet & Switch Repair | All Connected Electric';
+$pageDescription = 'Dead outlets, faulty switches, GFCI outlets and short circuits repaired in Hagerstown, MD homes and businesses. Call All Connected Electric: (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -40,7 +40,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'wiring-rewiring',       'icon' => 'waypoints', 'desc' => 'When the outlet is fine but the cable feeding it is not.',      'bullets' => ['Ungrounded circuits replaced', 'Loose splices found', 'Old cable traced']],
@@ -353,7 +352,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Outlet &amp; switch repair</span>
       <h2 id="sp-cta-title">Got an outlet or switch that will not cooperate?</h2>
-      <p>Tell us which outlets are dead and whether you have already reset the GFCIs, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to set a time. If a plate is warm or scorched, turn off that breaker and leave the outlet unused until it is checked.</p>
+      <p>Tell us which outlets are dead and whether you have already reset the GFCIs, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to set a time. If a plate is warm or scorched, turn off that breaker and leave the outlet unused until it is checked.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

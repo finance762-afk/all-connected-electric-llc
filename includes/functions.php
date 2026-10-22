@@ -120,6 +120,15 @@ if (!function_exists('formatPhone')) {
     }
 }
 
+if (!function_exists('linkContacts')) {
+    /** Turn the site phone number and email inside already-escaped text (FAQ answers, data strings) into tel:/mailto: links. */
+    function linkContacts(string $escaped): string {
+        global $phone, $phoneRaw, $email;
+        $escaped = str_replace(esc(formatPhone($phone)), '<a href="tel:' . esc($phoneRaw) . '">' . esc(formatPhone($phone)) . '</a>', $escaped);
+        return $email !== '' ? str_replace(esc($email), '<a href="mailto:' . esc($email) . '">' . esc($email) . '</a>', $escaped) : $escaped;
+    }
+}
+
 if (!function_exists('slugify')) {
     function slugify(string $text): string {
         $text = strtolower(str_replace('&', ' ', $text));
@@ -212,7 +221,7 @@ if (!function_exists('defaultPageTitle')) {
 }
 
 if (!function_exists('defaultMetaDescription')) {
-    /** Plain offering + CTA from config. States no license, insurance, hours or "free" claim — none is in the intake. */
+    /** Plain offering + CTA from config. No insurance, "free", 24/7 or same-day claim — none is in the intake. */
     function defaultMetaDescription(): string {
         global $siteName, $address, $phone;
         return $siteName . ': electrician in ' . $address['city'] . ', ' . $address['state']
@@ -275,7 +284,7 @@ if (!function_exists('generateLocalBusinessSchema')) {
     /** Homepage Electrician node (@id #organization). Every field comes from config.php; empty values are omitted, never guessed. */
     function generateLocalBusinessSchema(): array {
         global $siteName, $siteUrl, $phone, $phoneRaw, $email, $address, $addressPublic, $geo, $gbpMapsUrl,
-               $yearEstablished, $services, $serviceAreas, $socialLinks, $businessHours;
+               $yearEstablished, $services, $serviceAreas, $socialLinks, $openingHoursSpec, $licenseLabel, $gbpName;
         $root = rtrim($siteUrl, '/');
         $postal = ['@type' => 'PostalAddress', 'addressLocality' => $address['city'], 'addressRegion' => $address['state'], 'postalCode' => $address['zip'], 'addressCountry' => 'US'];
         if (!empty($addressPublic) && !empty($address['street'])) $postal = ['@type' => 'PostalAddress', 'streetAddress' => $address['street']] + array_slice($postal, 1);
@@ -284,6 +293,7 @@ if (!function_exists('generateLocalBusinessSchema')) {
             '@type' => 'Electrician',
             '@id' => $root . '/#organization',
             'name' => $siteName,
+            'legalName' => $siteName,
             'url' => $root . '/',
             'telephone' => $phoneRaw,
             'email' => $email,
@@ -292,13 +302,15 @@ if (!function_exists('generateLocalBusinessSchema')) {
         ];
         if (!empty($geo['lat']) && !empty($geo['lng'])) $node['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => $geo['lat'], 'longitude' => $geo['lng']];
         if (!empty($yearEstablished)) $node['foundingDate'] = (string) $yearEstablished;
-        if (!empty($businessHours) && is_array($businessHours)) $node['openingHoursSpecification'] = $businessHours;
+        if (!empty($openingHoursSpec)) $node['openingHoursSpecification'] = $openingHoursSpec;
+        if (!empty($licenseLabel)) $node['hasCredential'] = ['@type' => 'EducationalOccupationalCredential', 'credentialCategory' => 'license', 'name' => $licenseLabel];
         $logoUrl = '';
         foreach (['logo.png', 'logo.webp', 'logo.svg'] as $f) if (is_file($_SERVER['DOCUMENT_ROOT'] . '/assets/images/' . $f)) { $logoUrl = $root . '/assets/images/' . $f; break; }
         $img = ogImageUrl();
         if ($img !== '') $node['image'] = $img;
         if ($logoUrl !== '') $node['logo'] = $logoUrl;
         if (!empty($gbpMapsUrl)) $node['hasMap'] = $gbpMapsUrl;
+        if (!empty($gbpName) && $gbpName !== $siteName) $node['alternateName'] = $gbpName;
 
         $areaNodes = [];
         foreach ((array) $serviceAreas as $schemaArea) {
@@ -348,18 +360,6 @@ if (!function_exists('generateServiceSchema')) {
         ];
         if ($areas) $node['areaServed'] = $areas;
         return $node;
-    }
-}
-
-if (!function_exists('generateFAQSchema')) {
-    /** FAQPage from [['q' => '', 'a' => ''], ...]. AI comprehension aid only — FAQ rich results are deprecated. */
-    function generateFAQSchema(array $faqs): array {
-        $items = [];
-        foreach ($faqs as $faq) {
-            if (empty($faq['q']) || empty($faq['a'])) continue;
-            $items[] = ['@type' => 'Question', 'name' => $faq['q'], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $faq['a']]];
-        }
-        return ['@type' => 'FAQPage', 'mainEntity' => $items];
     }
 }
 

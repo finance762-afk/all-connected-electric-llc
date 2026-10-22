@@ -8,10 +8,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * The form posts to the Page One leads endpoint ($formAction = build-plan form_action, verbatim). Contact keeps the FULL form
  * (v6.3 placement rule): three separate, unbundled, never-pre-checked consent checkboxes (email opt-in, SMS opt-in,
  * required terms acceptance). The estimate dialog is turned off here ($noEstimateDialog) because this page has its own form.
- * Hours are not in intake (build-plan business_hours is empty), so the hours row renders only once $businessHours is set.
- * The map renders only when config.php supplies $gbpMapEmbed (an iframe snippet or its src URL); otherwise a directions card shows.
+ * Hours come from config.php $businessHours (build-plan business_hours). The map renders from $gbpMapEmbed (build-plan gbp
+ * map_embed_url, or a pasted iframe snippet); without it a directions card shows.
  */
-$pageTitle       = 'Contact All Connected Electric LLC | Electrician in Hagerstown, MD';
+$pageTitle       = 'Contact All Connected Electric LLC | Hagerstown, MD';
 $pageDescription = 'Call (301) 704-6333 or send a request to All Connected Electric LLC on Leitersburg Pike in Hagerstown, MD, for home, business and industrial electrical work.';
 $canonicalUrl    = $siteUrl . '/contact/';
 $ogImage         = '';
@@ -31,7 +31,7 @@ $contactReady = [
 $contactMapSrc = '';
 if (!empty($gbpMapEmbed)) {
     $contactMapSrc = preg_match('/src="([^"]+)"/i', (string) $gbpMapEmbed, $contactMapMatch) ? $contactMapMatch[1] : trim((string) $gbpMapEmbed);
-    if (!preg_match('#^https://(www\.)?google\.[a-z.]+/maps/#i', $contactMapSrc)) $contactMapSrc = '';
+    if (!preg_match('#^https://(www\.|maps\.)?google\.[a-z.]+/maps[/?]#i', $contactMapSrc)) $contactMapSrc = '';
 }
 
 $schemaMarkup = [
@@ -104,7 +104,7 @@ $schemaMarkup = [
     <div class="hero-copy">
       <span class="eyebrow">Contact &middot; <?php echo esc($address['city']); ?>, <?php echo esc($address['state']); ?></span>
       <h1 class="hero-title" id="ct-hero-title">Contact <span class="text-accent">All Connected Electric LLC</span> in Hagerstown, MD</h1>
-      <p class="hero-answer">Call <?php echo esc(formatPhone($phone)); ?>, email <?php echo esc($email); ?> or send the form below. <?php echo esc($siteName); ?> is at <?php echo esc($address['street']); ?>, <?php echo esc($address['city']); ?>, <?php echo esc($address['state']); ?> <?php echo esc($address['zip']); ?>.</p>
+      <p class="hero-answer">Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>, email <a href="mailto:<?php echo esc($email); ?>"><?php echo esc($email); ?></a> or send the form below. <?php echo esc($siteName); ?> is at <?php echo esc($address['street']); ?>, <?php echo esc($address['city']); ?>, <?php echo esc($address['state']); ?> <?php echo esc($address['zip']); ?>.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>
         <a class="link-call" href="#contact-form"><?php echo icon('send', 18); ?>or send the form</a>
@@ -232,7 +232,7 @@ $schemaMarkup = [
     <div class="reveal-left">
       <span class="eyebrow">Call the office</span>
       <h2 id="sp-cta-title">Would you rather just call about your electrical work?</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?>, say what is going on and where. <?php echo esc($siteName); ?> will tell you what it would look at first.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>, say what is going on and where. <?php echo esc($siteName); ?> will tell you what it would look at first.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'generator-installation';
 $pageService     = 'Generator Installation';
-$pageTitle       = 'Generator Installation Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Generator hookups, transfer switches and standby generator wiring in Hagerstown, MD. All Connected Electric LLC keeps your chosen circuits on in an outage.';
+$pageTitle       = 'Hagerstown Generator Installation | All Connected Electric';
+$pageDescription = 'Generator hookups, transfer switches and standby generator wiring in Hagerstown, MD to keep chosen circuits on in an outage. Call All Connected Electric today.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -42,7 +42,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'panel-upgrades',        'icon' => 'zap',          'desc' => 'A panel with room for the interlock or transfer switch the generator needs.', 'bullets' => ['Full panels replaced', 'Service capacity added', 'Circuits relabeled clearly']],
@@ -317,7 +316,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -372,7 +371,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Generator estimate</span>
       <h2 id="sp-cta-title">Want a price on a generator hookup in Hagerstown?</h2>
-      <p>Send the generator make and size if you already own one, plus the list of what must stay on, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to look at the panel and where the inlet or standby unit can go.</p>
+      <p>Send the generator make and size if you already own one, plus the list of what must stay on, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to look at the panel and where the inlet or standby unit can go.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

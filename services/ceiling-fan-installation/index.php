@@ -12,7 +12,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'ceiling-fan-installation';
 $pageService     = 'Ceiling Fan Installation';
-$pageTitle       = 'Ceiling Fan Installation Hagerstown MD | All Connected Electric LLC';
+$pageTitle       = 'Hagerstown Ceiling Fan Installation | All Connected Electric';
 $pageDescription = 'Ceiling fan installation and repair in Hagerstown, MD: fan-rated ceiling boxes, new wiring where no fixture exists, and wall controls. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
@@ -40,7 +40,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'lighting-installation',  'icon' => 'lightbulb', 'desc' => 'Light fixtures, recessed lights and outdoor lighting installed.', 'bullets' => ['Recessed lights added', 'Fixtures swapped or repaired', 'Outdoor lights wired']],
@@ -369,7 +368,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Fan install estimate</span>
       <h2 id="sp-cta-title">Want a ceiling fan up before the next hot spell?</h2>
-      <p>Send the room size, the ceiling height and what is in the ceiling now, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to set a time. A photo of the existing box or fixture helps.</p>
+      <p>Send the room size, the ceiling height and what is in the ceiling now, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to set a time. A photo of the existing box or fixture helps.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

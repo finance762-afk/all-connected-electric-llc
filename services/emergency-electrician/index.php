@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'emergency-electrician';
 $pageService     = 'Emergency Electrician';
-$pageTitle       = 'Emergency Electrician Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Lost power, a breaker that will not reset or a burning smell in Hagerstown, MD? What to do first, and how All Connected Electric LLC finds the fault.';
+$pageTitle       = 'Hagerstown Emergency Electrician | All Connected Electric';
+$pageDescription = 'Lost power, a breaker that won\'t reset or a burning smell in Hagerstown, MD? What to do first and how All Connected Electric finds it. Call (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -42,7 +42,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'outlet-switch-repair', 'icon' => 'plug',      'desc' => 'Dead, warm or scorched outlets and failing switches repaired or replaced.', 'bullets' => ['Scorched outlets replaced', 'GFCI outlets reset or replaced', 'Short circuits found']],
@@ -102,7 +101,7 @@ $pageRelated = [
       <div class="hero-copy">
         <span class="eyebrow">Urgent electrical problems &middot; Hagerstown, MD</span>
         <h1 class="hero-title" id="sp-hero-title">Emergency electrician in <span class="text-accent">Hagerstown, MD</span></h1>
-        <p class="hero-answer">All Connected Electric LLC troubleshoots urgent electrical problems at homes and businesses in Hagerstown, MD: power lost to part of a building, breakers that will not reset, sparking outlets and burning smells. If there is smoke or flame, get out and call 911 first, then call <?php echo esc(formatPhone($phone)); ?> and ask about availability.</p>
+        <p class="hero-answer">All Connected Electric LLC troubleshoots urgent electrical problems at homes and businesses in Hagerstown, MD: power lost to part of a building, breakers that will not reset, sparking outlets and burning smells. If there is smoke or flame, get out and call 911 first, then call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> and ask about availability.</p>
         <div class="hero-actions">
           <button type="button" class="btn btn-primary btn-lg hero-form-open" data-open-estimate>Describe the problem</button>
           <a class="link-call" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>or call <?php echo esc(formatPhone($phone)); ?></a>
@@ -304,7 +303,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -359,7 +358,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Urgent problem</span>
       <h2 id="sp-cta-title">Need an electrician for a problem that cannot wait?</h2>
-      <p>Call <?php echo esc(formatPhone($phone)); ?>, describe what happened and ask about availability, or send the details with the form. If there is smoke, flame or a downed line, call 911 first.</p>
+      <p>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>, describe what happened and ask about availability, or send the details with the form. If there is smoke, flame or a downed line, call 911 first.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

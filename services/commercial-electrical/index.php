@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $pageSlug        = 'commercial-electrical';
 $pageService     = 'Commercial Electrical';
-$pageTitle       = 'Commercial Electrical Hagerstown MD | All Connected Electric LLC';
-$pageDescription = 'Commercial electrical in Hagerstown, MD: equipment circuits, lighting, panels and repairs for offices and storefronts. All Connected Electric, (301) 704-6333.';
+$pageTitle       = 'Hagerstown Commercial Electrician | All Connected Electric';
+$pageDescription = 'Commercial electrical in Hagerstown, MD: equipment circuits, lighting, panels and repairs for offices and shops. Call All Connected Electric: (301) 704-6333.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSlug . '/';
 $ogImage         = '';
 $currentPage     = 'services';
@@ -42,7 +42,6 @@ $schemaMarkup = [
         ['name' => $pageService, 'url' => $canonicalUrl],
     ]),
 ];
-if ($pageFaqs) $schemaMarkup[] = generateFAQSchema($pageFaqs);
 
 $pageRelated = [
     ['slug' => 'lighting-installation', 'icon' => 'lightbulb', 'desc' => 'Fixtures, recessed lights and exterior lighting installed or repaired.', 'bullets' => ['Dead fixtures traced and fixed', 'LED-friendly switches and dimmers', 'Exterior and sign lighting']],
@@ -335,7 +334,7 @@ if ($pageReviews !== ''): ?>
 <?php foreach ($pageFaqs as $pageFaqIdx => $pageFaq): ?>
       <details class="faq"<?php echo $pageFaqIdx === 0 ? ' open' : ''; ?>>
         <summary><?php echo esc($pageFaq['q']); ?></summary>
-        <p class="faq-answer"><?php echo esc($pageFaq['a']); ?></p>
+        <p class="faq-answer"><?php echo linkContacts(esc($pageFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>
@@ -390,7 +389,7 @@ if ($pageReviews !== ''): ?>
     <div class="reveal-left">
       <span class="eyebrow">Commercial estimate</span>
       <h2 id="sp-cta-title">Planning electrical work for a Hagerstown business?</h2>
-      <p>Send the address, the type of business and what needs to change, or call <?php echo esc(formatPhone($phone)); ?>. All Connected Electric LLC will follow up to arrange a walk-through of the space and the panel.</p>
+      <p>Send the address, the type of business and what needs to change, or call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>. All Connected Electric LLC will follow up to arrange a walk-through of the space and the panel.</p>
     </div>
     <div class="actions reveal-right">
       <a class="btn btn-accent btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>

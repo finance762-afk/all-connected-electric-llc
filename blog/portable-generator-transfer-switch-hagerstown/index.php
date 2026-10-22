@@ -13,8 +13,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
  */
 $postSlug        = 'portable-generator-transfer-switch-hagerstown';
 $post            = blogPostBySlug($postSlug);
-$pageTitle       = $post['title'];
-$pageDescription = 'A portable generator that powers anything wired into the house needs a transfer switch or listed interlock. What to plan before a Hagerstown, MD winter outage.';
+$pageTitle       = 'Portable Generator Transfer Switch Rules for Hagerstown, MD';
+$pageDescription = 'A portable generator that powers anything wired into the house needs a transfer switch or listed interlock. Plan yours before a Hagerstown, MD winter outage.';
 $canonicalUrl    = $siteUrl . blogPostUrl($post);
 $ogImage         = $post['image'];
 $currentPage     = 'blog';
@@ -50,7 +50,6 @@ $schemaMarkup = [
         ['name' => 'Blog', 'url' => $siteUrl . '/blog/'],
         ['name' => $post['title'], 'url' => $canonicalUrl],
     ]),
-    generateFAQSchema($pageFaqs),
 ];
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php'; ?>
@@ -160,7 +159,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/cta-band.php';
 <?php foreach ($pageFaqs as $faqIdx => $faqItem): ?>
           <details class="faq"<?php echo $faqIdx === 0 ? ' open' : ''; ?>>
             <summary><?php echo esc($faqItem['q']); ?></summary>
-            <p class="faq-answer"><?php echo esc($faqItem['a']); ?></p>
+            <p class="faq-answer"><?php echo linkContacts(esc($faqItem['a'])); ?></p>
           </details>
 <?php endforeach; ?>
         </section>

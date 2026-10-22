@@ -8,8 +8,7 @@
  *   $ogImage (optional), $noindex (thank-you only), $bodyClass (optional),
  *   $schemaMarkup (JSON string, one node array, or a list of node arrays — pushed into the page's @graph),
  *   $heroPreload = ['srcset' => '… 480w, … 960w, … 1600w' (AVIF), 'sizes' => '100vw'] on photo-hero pages.
- * The homepage ($pageType === 'home') additionally emits the full Electrician (#organization) + WebSite nodes;
- * every other page references them by @id and never duplicates the LocalBusiness block.
+ * Every page emits the full Electrician (#organization) + WebSite nodes once; page nodes reference them by @id.
  */
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
@@ -17,11 +16,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $headTitle = !empty($pageTitle) ? $pageTitle : defaultPageTitle();
 $headDesc  = !empty($pageDescription) ? $pageDescription : (!empty($metaDescription) ? $metaDescription : defaultMetaDescription());
 $headCanon = !empty($canonicalUrl) ? $canonicalUrl : requestCanonical();
-$headNodes = [];
-if (($pageType ?? '') === 'home' || ($currentPage ?? '') === 'home') {
-    $headNodes[] = generateLocalBusinessSchema();
-    $headNodes[] = generateWebSiteSchema();
-}
+// Electrician (#organization) + WebSite on every page (seo-aeo-2026 Part B "Universal schema"); a page node with the same
+// @id (area pages' richer areaServed) is merged into it rather than emitted twice.
+$headOrg   = generateLocalBusinessSchema();
+$headNodes = [$headOrg, generateWebSiteSchema()];
 if (!empty($schemaMarkup)) {
     $headExtra = is_string($schemaMarkup) ? json_decode($schemaMarkup, true) : $schemaMarkup;
     if (is_array($headExtra)) {
@@ -30,6 +28,7 @@ if (!empty($schemaMarkup)) {
         foreach ($headList as $headNode) {
             if (isset($headNode['@graph'])) { foreach ($headNode['@graph'] as $headGraphNode) $headNodes[] = $headGraphNode; continue; }
             unset($headNode['@context']);
+            if (($headNode['@id'] ?? '') === $headOrg['@id']) { $headNodes[0] = array_merge($headNodes[0], $headNode); continue; }
             $headNodes[] = $headNode;
         }
     }

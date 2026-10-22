@@ -65,7 +65,7 @@ $homeFaqs = [
      'a' => 'All Connected Electric LLC works on all three: houses, commercial buildings such as offices and storefronts, and industrial sites such as warehouses and shops. The same company handles a kitchen circuit, a storefront lighting upgrade and a dedicated circuit for shop equipment in the Hagerstown area.'],
 ];
 
-$schemaMarkup = [generateFAQSchema($homeFaqs)];
+$schemaMarkup = [];   // FAQs stay visible text only — no FAQPage JSON-LD (QA blocker since 2026-10-20)
 
 /* Lead forms: p1_lead_hidden_fields('<form id>') (includes/p1-form-helpers.php) emits _next, _honey, form_location,
    consent_version/consent_page, p1_attribution_fields('<form id>') and the _ft/_js spam shield in one call. */
@@ -467,7 +467,7 @@ $homeMoreLast = array_pop($homeMoreLinks);
         <p>Hagerstown has a lot of older houses, and much of the residential work here is bringing panels and wiring up to what a household runs today, from EV chargers and heat pumps to a finished basement. On the commercial and industrial side, it is new circuits for equipment, lighting and finding faults that stop work.</p>
 
         <ol class="process-steps">
-          <li><b>Tell us the problem</b><span>Call <?php echo esc(formatPhone($phone)); ?> or send the form with what is going on and where.</span></li>
+          <li><b>Tell us the problem</b><span>Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> or send the form with what is going on and where.</span></li>
           <li><b>We look at the system</b><span>The panel, circuits and wiring involved are checked before anything is quoted.</span></li>
           <li><b>Permit, when it is needed</b><span>City of Hagerstown or Washington County rules are sorted before work starts.</span></li>
           <li><b>Work done, then walked through</b><span>You see what was changed and what to watch for before we leave.</span></li>
@@ -528,7 +528,7 @@ if ($homeReviews !== ''): ?>
 <?php foreach ($homeFaqs as $homeFaqIdx => $homeFaq): ?>
       <details class="faq"<?php echo $homeFaqIdx < 2 ? ' open' : ''; ?>>
         <summary><?php echo esc($homeFaq['q']); ?></summary>
-        <p><?php echo esc($homeFaq['a']); ?></p>
+        <p><?php echo linkContacts(esc($homeFaq['a'])); ?></p>
       </details>
 <?php endforeach; ?>
     </div>

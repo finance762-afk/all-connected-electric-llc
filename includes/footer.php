@@ -21,7 +21,7 @@ foreach ([['/about/', 'About'], ['/faq/', 'FAQ'], ['/blog/', 'Blog'], ['/contact
     if (siteHas($footLink[0])) $footCompany[] = $footLink;
 }
 $footEntityServices = [];
-foreach ($services as $footSvc) $footEntityServices[] = strtolower($footSvc['name']);
+foreach ($services as $footSvc) $footEntityServices[] = $footSvc['name'];
 ?>
 </main>
 
@@ -106,12 +106,16 @@ foreach ($services as $footSvc) $footEntityServices[] = strtolower($footSvc['nam
 
       </div>
 
-      <!-- AEO entity block: consistent NAP + a plain-language statement of who, what, where -->
+      <!-- AEO entity block: consistent NAP + a plain-language statement of who, what, where (microdata mirrors the #organization JSON-LD) -->
       <div class="footer-entity aeo-entity" itemscope itemtype="https://schema.org/Electrician" itemid="<?php echo esc(rtrim($siteUrl, '/')); ?>/#organization">
-        <meta itemprop="name" content="<?php echo esc($siteName); ?>">
         <meta itemprop="url" content="<?php echo esc(rtrim($siteUrl, '/')); ?>/">
-        <meta itemprop="telephone" content="<?php echo esc($phoneRaw); ?>">
-        <p><strong><?php echo esc($siteName); ?></strong> is an electrician in <?php echo esc($address['city']); ?>, <?php echo esc($address['state']); ?>, serving <?php echo esc($address['city']); ?> and the surrounding area since <?php echo (int) $yearEstablished; ?>. Services: <?php echo esc(implode(', ', $footEntityServices)); ?>. Call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc($footPhone); ?></a>.</p>
+        <meta itemprop="foundingDate" content="<?php echo (int) $yearEstablished; ?>">
+<?php foreach ((array) ($openingHoursSpec ?? []) as $footHours): ?>
+        <meta itemprop="openingHours" content="<?php echo esc(implode(',', array_map(function ($d) { return substr($d, 0, 2); }, $footHours['dayOfWeek'])) . ' ' . $footHours['opens'] . '-' . $footHours['closes']); ?>">
+<?php endforeach; ?>
+        <p><strong itemprop="name"><?php echo esc($siteName); ?></strong> is an electrical contractor based in <?php echo esc($address['city']); ?>, <?php echo esc($address['state']); ?>, serving <?php echo esc($address['city']); ?> and the surrounding Washington County area since <?php echo (int) $yearEstablished; ?><?php if ($ownerName !== ''): ?>, owned by <?php echo esc($ownerName); ?><?php endif; ?>.<?php if (!empty($licenseLabel)): ?> Credential: <?php echo esc($licenseLabel); ?>.<?php endif; ?> Services: <?php echo esc(implode(', ', $footEntityServices)); ?>.
+          Office: <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><?php if ($footStreet !== ''): ?><span itemprop="streetAddress"><?php echo esc($footStreet); ?></span>, <?php endif; ?><span itemprop="addressLocality"><?php echo esc($address['city']); ?></span>, <span itemprop="addressRegion"><?php echo esc($address['state']); ?></span> <span itemprop="postalCode"><?php echo esc($address['zip']); ?></span></span>.<?php if (is_string($businessHours) && $businessHours !== ''): ?> Hours: <?php echo esc($businessHours); ?>.<?php endif; ?>
+          Contact: <a href="tel:<?php echo esc($phoneRaw); ?>" itemprop="telephone" content="<?php echo esc($phoneRaw); ?>"><?php echo esc($footPhone); ?></a> | <a href="mailto:<?php echo esc($email); ?>" itemprop="email"><?php echo esc($email); ?></a>.</p>
       </div>
     </div>
   </div>

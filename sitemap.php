@@ -3,6 +3,7 @@
  * sitemap.php — dynamic sitemap; .htaccess rewrites /sitemap.xml to this file. No static sitemap.xml / sitemap-images.xml.
  * Nothing here lists a page by hand: URLs come from config.php ($services, $serviceAreas), the blog registry ($blogPosts)
  * and a fixed list of top-level pages that is filtered by siteHas() so an unbuilt page can never appear.
+ * Priorities: home 1.0 · services hub + service pages 0.8 · other content pages 0.6 · legal pages 0.3 (yearly).
  * lastmod = the page file's mtime (blog posts use their registry dateISO). Image entries come from registry photos that exist on disk.
  * Canonicals use the trailing-slash form, identical to the on-page canonicals.
  */
@@ -23,7 +24,7 @@ $smMtime = function (string $path) use ($smDocRoot): string {
 
 $smUrls = [];   // [loc path, lastmod, changefreq, priority, images[]]
 $smUrls[] = ['/', $smMtime('/'), 'weekly', '1.0', []];
-foreach ([['/services/', 'monthly', '0.9'], ['/service-areas/', 'monthly', '0.8'], ['/about/', 'yearly', '0.7'], ['/faq/', 'monthly', '0.6'], ['/contact/', 'yearly', '0.7'], ['/blog/', 'weekly', '0.7']] as $smTop) {
+foreach ([['/services/', 'monthly', '0.8'], ['/service-areas/', 'monthly', '0.6'], ['/about/', 'yearly', '0.6'], ['/faq/', 'monthly', '0.6'], ['/contact/', 'yearly', '0.6'], ['/blog/', 'weekly', '0.6']] as $smTop) {
     if (siteHas($smTop[0])) $smUrls[] = [$smTop[0], $smMtime($smTop[0]), $smTop[1], $smTop[2], []];
 }
 foreach ($services as $smSvc) {
@@ -32,7 +33,7 @@ foreach ($services as $smSvc) {
 }
 foreach ($serviceAreas as $smArea) {
     $smPath = areaUrl($smArea['slug']);
-    if ($smPath !== '') $smUrls[] = [$smPath, $smMtime($smPath), 'monthly', '0.7', []];
+    if ($smPath !== '') $smUrls[] = [$smPath, $smMtime($smPath), 'monthly', '0.6', []];
 }
 foreach ($blogPosts as $smPost) {
     $smPath = blogPostUrl($smPost);

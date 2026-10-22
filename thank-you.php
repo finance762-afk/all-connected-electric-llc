@@ -87,7 +87,7 @@ foreach ([
       <span class="ty-tick" aria-hidden="true"><?php echo icon('check', 32); ?></span>
       <span class="eyebrow">Request received</span>
       <h1 class="hero-title" id="ty-title">Thank you. Your request is <span class="text-accent">in</span>.</h1>
-      <p class="hero-answer"><?php echo esc($siteName); ?> received your request in Hagerstown, MD. The office will follow up by phone or email about the job. If you would rather talk now, call <?php echo esc(formatPhone($phone)); ?>.</p>
+      <p class="hero-answer"><?php echo esc($siteName); ?> received your request in Hagerstown, MD. The office will follow up by phone or email about the job. If you would rather talk now, call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="tel:<?php echo esc($phoneRaw); ?>"><?php echo icon('phone', 18); ?>Call <?php echo esc(formatPhone($phone)); ?></a>
         <a class="link-call" href="/"><?php echo icon('house', 18); ?>or go back to the homepage</a>
@@ -105,7 +105,7 @@ foreach ([
         <h2 id="ty-next-title">What happens after you send a request to All Connected Electric?</h2>
         <p class="answer-block">Your request goes straight to the <?php echo esc($siteName); ?> office, not to a lead marketplace. The office follows up by phone or email to ask about the job and where it is, and for most jobs the electrician then needs to see the panel and wiring before giving a price.</p>
         <ol class="ty-steps">
-          <li><b>Your request reaches the office</b><span>The details you typed, along with the phone number and email you gave, are delivered to <?php echo esc($email); ?>.</span></li>
+          <li><b>Your request reaches the office</b><span>The details you typed, along with the phone number and email you gave, are delivered to <a href="mailto:<?php echo esc($email); ?>"><?php echo esc($email); ?></a>.</span></li>
           <li><b>The office follows up</b><span>Expect a call or an email to ask about the job, where it is, and when it needs to happen. Keep your phone nearby.</span></li>
           <li><b>The job gets looked at</b><span>The panel, wiring and what is connected to them are checked before a price is given, so the number matches the work.</span></li>
         </ol>
@@ -116,7 +116,7 @@ foreach ([
           <p>If you see smoke or flames, smell burning plastic, or the panel is hot to the touch, leave the building and call 911 first.</p>
           <p>For a dead outlet, a breaker that will not stay on or a loss of power, do not wait for the form follow-up: call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a> and say it is urgent.</p>
         </aside>
-        <p class="footnote">Need to add something to your request? Reply to the follow-up email, call <?php echo esc(formatPhone($phone)); ?>, or email <a href="mailto:<?php echo esc($email); ?>"><?php echo esc($email); ?></a>.</p>
+        <p class="footnote">Need to add something to your request? Reply to the follow-up email, call <a href="tel:<?php echo esc($phoneRaw); ?>"><?php echo esc(formatPhone($phone)); ?></a>, or email <a href="mailto:<?php echo esc($email); ?>"><?php echo esc($email); ?></a>.</p>
       </div>
     </div>
   </div>
