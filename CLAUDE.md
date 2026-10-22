@@ -9,7 +9,7 @@
 CLAUDE.md is the **enforcement layer** — it defines what a build must contain and what's forbidden. The **how** lives in reference files. Read the references before writing code:
 
 - `~/crm/references/design-system.md` — visual architecture, CSS tokens, premium technique library, visual vocabulary archetypes (**READ FIRST**)
-- `~/crm/references/seo-aeo-2026.md` — SEO + AEO specifications, schema markup, sitemap.php, llms.txt patterns
+- `~/crm/references/seo-aeo-2026.md` — SEO + AEO specifications, schema markup, sitemap.php (NEVER create llms.txt / llms-full.txt, NEVER emit FAQPage JSON-LD — QA blockers since 2026-10-20)
 - `~/crm/references/build-phases.md` — PHP architecture, build phase order, deployment pipeline
 - `~/crm/references/blog-standard.md` — blog registry, post anatomy, topic clusters (Premium builds)
 
@@ -392,15 +392,15 @@ See site-qa-agent/SKILL.md for validator implementation.
 
 ---
 
-## Blog Standard (Premium — REQUIRED)
+## Blog Standard (Premium)
 
-Every Premium build ships a blog. Full spec: `~/crm/references/blog-standard.md`. Enforcement summary:
+**Build pipeline (Calvin, 2026-10-20):** the build writes NO posts. Premium builds ship `/blog/index.php` as a "coming soon" placeholder carrying `<meta name="robots" content="noindex, follow">`, excluded from sitemap.php, with no homepage "From the Blog" section. Real posts are added later via the design-portal Blogs tab; once they exist, the spec below applies. Full spec: `~/crm/references/blog-standard.md`. Post summary:
 
 - **Registry:** `includes/blog-data.php` — single `$blogPosts` array (slug, title, excerpt, image, alt, date, dateISO, category, readtime). The blog index, homepage preview, related-articles blocks, and sitemap.php ALL read from this registry. Hardcoded post lists anywhere = fail.
 - **Structure:** `/blog/index.php` (editorial cards, category badges) + `/blog/{slug}/index.php` per post.
-- **Homepage:** "From the Blog" preview section auto-pulling the latest registry post (featured card: image, category badge, date, read time, excerpt, CTA) + View All button.
+- **Homepage (only once real posts exist):** "From the Blog" preview section auto-pulling the latest registry post (featured card: image, category badge, date, read time, excerpt, CTA) + View All button.
 - **Post anatomy:** answer-first intro (direct answer in first 50 words), TOC sidebar with anchors, sidebar CTA, Related Services block, Related Articles block (2-3 registry cards, same category first), ≥2 inline links to other posts and ≥2 to service pages in body copy.
-- **Schema per post:** @graph — BlogPosting (author = Organization @id, datePublished/dateModified, keywords) + BreadcrumbList + FAQPage mirroring the visible FAQ.
+- **Schema per post:** @graph — BlogPosting (author = Organization @id, datePublished/dateModified, keywords) + BreadcrumbList. NEVER FAQPage JSON-LD (visible FAQ text only).
 - **SEO:** post titles ≤60 chars (no full brand suffix), unique descriptions, self-referencing canonical, auto-included in sitemap.php.
 - **Content strategy:** topic clusters — 1 pillar + 4-7 supporting posts answering related long-tail questions, targeting DataForSEO keyword gaps.
 
@@ -411,7 +411,7 @@ Every Premium build ships a blog. Full spec: `~/crm/references/blog-standard.md`
 For anything not covered above:
 
 - **Visual architecture, CSS tokens, technique library, archetypes** → `~/crm/references/design-system.md`
-- **SEO schema, meta tags, llms.txt, AEO content rules** → `~/crm/references/seo-aeo-2026.md`
+- **SEO schema, meta tags, AEO content rules (no llms.txt, no FAQPage JSON-LD)** → `~/crm/references/seo-aeo-2026.md`
 - **PHP component structure, build phases, file organization, deployment** → `~/crm/references/build-phases.md`
 - **Blog registry, post anatomy, topic clusters** → `~/crm/references/blog-standard.md`
 - **Legal pages, TCPA consent, cookie banner, footer legal row** → `~/crm/references/legal-compliance.md`
